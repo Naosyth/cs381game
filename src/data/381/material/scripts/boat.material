@@ -1,0 +1,195 @@
+material wall/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material steel/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material hardwhit/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material black/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material instru/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material color/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material carpet/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material silver/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material glass/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material color2/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material softtuff/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material wood/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material dash/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}

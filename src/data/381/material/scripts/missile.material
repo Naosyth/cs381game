@@ -1,0 +1,25 @@
+material Metal
+{
+   technique
+   {
+      pass
+      {
+         59.4555039496997, 59.4555039496997
+         diffuse 1 1 1 1.0
+         texture_unit
+         {
+            texture Metal.jpg
+         }
+      }
+   }
+}
+material SketchupDefault
+{
+   technique
+   {
+      pass
+      {
+         diffuse 1.0 1.0 1.0
+      }
+   }
+}

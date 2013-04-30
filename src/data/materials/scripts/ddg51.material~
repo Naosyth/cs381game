@@ -1,0 +1,15 @@
+material SOLID/TEX/ddg51.bmp
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture ddg51.bmp
+			}
+		}
+	}
+}
+
+

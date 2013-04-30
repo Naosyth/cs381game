@@ -1,0 +1,13 @@
+material SOLID/TEX/ecslHorizontal.bmp
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture ecslHorizontal.bmp
+			}
+		}
+	}
+}

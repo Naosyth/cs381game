@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao
+END
+diffuse.material
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/diffuse.material
+END
+config.ini
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/config.ini
+END
+colours.material
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/colours.material
+END
+shadow_caster.material
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/shadow_caster.material
+END
+ambient.program
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/ambient.program
+END
+red.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/red.bmp
+END
+orange.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/orange.bmp
+END
+Ogre.material
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/Ogre.material
+END
+diffuse.program
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/diffuse.program
+END
+shadow_caster.program
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/shadow_caster.program
+END
+ssao.cg
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/ssao.cg
+END
+white.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/white.bmp
+END
+metal.material
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/metal.material
+END
+level.mesh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/level.mesh
+END
+ssao.compositor
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/ssao.compositor
+END
+ssao.material
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/ssao.material
+END
+random.png
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/random.png
+END
+blue.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/blue.bmp
+END
+GreenSkin.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/GreenSkin.jpg
+END
+ambient.cg
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/ambient.cg
+END
+RustedMetal.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/RustedMetal.jpg
+END
+ogre1.material
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/ogre1.material
+END
+green.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/green.bmp
+END
+diffuse.cg
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/diffuse.cg
+END
+shadow_caster.cg
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/ssao/shadow_caster.cg
+END

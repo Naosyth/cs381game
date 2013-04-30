@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl
+END
+notex_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl/notex_ps.glsl
+END
+nm_vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl/nm_vs.glsl
+END
+ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl/ps.glsl
+END
+vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl/vs.glsl
+END
+nm_notex_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl/nm_notex_ps.glsl
+END
+nm_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/material/glsl/nm_ps.glsl
+END

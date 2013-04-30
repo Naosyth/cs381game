@@ -1,0 +1,17 @@
+material ECSLENT/navy/material/f1Overlay
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture f1OverlayTex.png
+			}
+		}
+	}
+}

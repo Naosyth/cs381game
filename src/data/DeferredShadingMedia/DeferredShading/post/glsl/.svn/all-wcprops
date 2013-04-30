@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl
+END
+Ambient_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/Ambient_ps.glsl
+END
+ShowColour_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/ShowColour_ps.glsl
+END
+LightMaterial_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/LightMaterial_ps.glsl
+END
+vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/vs.glsl
+END
+ShowDS_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/ShowDS_ps.glsl
+END
+GlobalLight_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/GlobalLight_ps.glsl
+END
+SinglePass_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/SinglePass_ps.glsl
+END
+ShowNormal_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/ShowNormal_ps.glsl
+END
+LightMaterial_vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/DeferredShading/post/glsl/LightMaterial_vs.glsl
+END

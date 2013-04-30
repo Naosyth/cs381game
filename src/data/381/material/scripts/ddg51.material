@@ -1,0 +1,318 @@
+
+material C000007
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.5294 0.5294 0.5294 1
+			diffuse 0.5294 0.5294 0.5294 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000017
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.3098 0.3098 0.3098 1
+			diffuse 0.3098 0.3098 0.3098 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000004
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.5608 0.5608 0.5608 1
+			diffuse 0.5608 0.5608 0.5608 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000014
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.1608 0.1608 0.1608 1
+			diffuse 0.1608 0.1608 0.1608 1
+			specular 0 0 0 1 1
+		}
+
+	}
+
+}
+
+
+
+material C000005
+{
+	technique
+	{
+		pass
+		{
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000015
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.3412 0.3412 0.3412 1
+			diffuse 0.3412 0.3412 0.3412 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000006
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.2706 0.2706 0.2706 1
+			diffuse 0.2706 0.2706 0.2706 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000016
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.4667 0.4667 0.4667 1
+			diffuse 0.4667 0.4667 0.4667 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000003
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.1608 0.1608 0.1608 1
+			diffuse 0.1608 0.1608 0.1608 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000013
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.9059 0.9059 0.9059 1
+			diffuse 0.9059 0.9059 0.9059 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000000
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.1608 0.1608 0.1608 1
+			diffuse 0.1608 0.1608 0.1608 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000008
+{
+	technique
+	{
+		pass
+		{
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000002
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.6235 0.6235 0.6235 1
+			diffuse 0.6235 0.6235 0.6235 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000011
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.4039 0.4039 0.4039 1
+			diffuse 0.4039 0.4039 0.4039 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material SS
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.296 0.302 0.29 1
+			diffuse 0.521 0.521 0.521 1
+		}
+
+	}
+
+}
+
+
+
+material C000012
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.9059 0.9059 0.9059 1
+			diffuse 0.9059 0.9059 0.9059 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material C000018
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.5294 0.5294 0.5294 1
+			diffuse 0.5294 0.5294 0.5294 1
+			specular 0 0 0 1 100
+		}
+
+	}
+
+}
+
+
+
+material Hull
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.296 0.314 0.314 1
+			diffuse 0.5686 0.5686 0.5882 1
+			specular 0.2 0.2 0.2 1 0
+		}
+
+	}
+
+}
+
+
+
+material Deck
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.3725 0.4353 0.502 1
+			diffuse 0.3725 0.4353 0.502 1
+			specular 0.2 0.2 0.2 1 8
+		}
+
+	}
+
+}
+
+

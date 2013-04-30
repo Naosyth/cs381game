@@ -1,0 +1,17 @@
+material ECSLENT/navy/material/shipInfo/overlay
+{
+	technique
+	{
+		pass
+		{
+			lighting on
+			scene_blend alpha_blend
+			depth_check on
+
+			texture_unit
+			{
+				texture metal0.jpg
+			}
+		}
+	}
+}

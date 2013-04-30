@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia
+END
+deferred_post_ambient.material
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_ambient.material
+END
+deferreddemo.material
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferreddemo.material
+END
+deferred_post_multipass.material
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_multipass.material
+END
+deferred_post_onepass.glsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_onepass.glsl.program
+END
+deferred_post_onepass.hlsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_onepass.hlsl.program
+END
+deferred_post_minilight.material
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_minilight.material
+END
+deferred.program
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred.program
+END
+deferred.glsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred.glsl.program
+END
+deferred.hlsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred.hlsl.program
+END
+deferred_post_debug.material
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_debug.material
+END
+deferred_post_ambient.program
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_ambient.program
+END
+deferred_post_multipass.glsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_multipass.glsl.program
+END
+deferred_post_multipass.hlsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_multipass.hlsl.program
+END
+deferred_post_minilight.glsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_minilight.glsl.program
+END
+deferred_post_minilight.program
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_minilight.program
+END
+deferred_post_minilight.hlsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_minilight.hlsl.program
+END
+deferred_post_debug.program
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_debug.program
+END
+deferred_post_debug.glsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_debug.glsl.program
+END
+deferred_post_debug.hlsl.program
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_debug.hlsl.program
+END
+deferred_post_vs.program
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_vs.program
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/COPYING
+END
+deferred_post_onepass.material
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred_post_onepass.material
+END
+deferred.material
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred.material
+END
+deferred.compositor
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/DeferredShadingMedia/deferred.compositor
+END

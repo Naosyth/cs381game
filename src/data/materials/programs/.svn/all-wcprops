@@ -1,0 +1,581 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs
+END
+Blur_vs11.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur_vs11.hlsl
+END
+OldTV.cg
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OldTV.cg
+END
+Common.cg
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Common.cg
+END
+BlurH_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/BlurH_ps20.hlsl
+END
+skinningTwoWeightsShadowCasterVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/skinningTwoWeightsShadowCasterVp.glsl
+END
+Example_Basic.cg
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_Basic.cg
+END
+SwizzleGP.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/SwizzleGP.glsl
+END
+BlurV_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/BlurV_ps20.hlsl
+END
+Bloom2_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Bloom2_ps20.hlsl
+END
+hdrutils.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdrutils.hlsl
+END
+oceanHLSL_Cg.frag
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/oceanHLSL_Cg.frag
+END
+Blur1_vs11.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur1_vs11.hlsl
+END
+oceanHLSL_Cg.vert
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/oceanHLSL_Cg.vert
+END
+varianceshadowreceiverfp.cg
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/varianceshadowreceiverfp.cg
+END
+DOF_ps.cg
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DOF_ps.cg
+END
+instancingVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/instancingVp.glsl
+END
+Blur_ps.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur_ps.glsl
+END
+Blur_vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur_vs.glsl
+END
+PassthroughVP.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/PassthroughVP.glsl
+END
+LaplaceFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/LaplaceFP.cg
+END
+BlurH_ps20.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/BlurH_ps20.glsl
+END
+varianceshadowreceivervp.cg
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/varianceshadowreceivervp.cg
+END
+Bloom_vs11.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Bloom_vs11.hlsl
+END
+hdr_finalToneMapping.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr_finalToneMapping.glsl
+END
+OffsetMapping.cg
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OffsetMapping.cg
+END
+Blur1_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur1_ps20.hlsl
+END
+DepthShadowmapNormalMapReceiverFp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmapNormalMapReceiverFp.glsl
+END
+Example_FresnelPS.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_FresnelPS.asm
+END
+Example_Basic.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_Basic.hlsl
+END
+hdr_tonemap_util.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr_tonemap_util.glsl
+END
+BlurV_ps20.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/BlurV_ps20.glsl
+END
+Bloom2_ps20.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Bloom2_ps20.glsl
+END
+StdQuad_vp.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/StdQuad_vp.cg
+END
+AmbientOneTexture.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/AmbientOneTexture.glsl
+END
+mrttestfp_quad.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/mrttestfp_quad.glsl
+END
+Example_CelShading.cg
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_CelShading.cg
+END
+TilingFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/TilingFP.cg
+END
+Grass.cg
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Grass.cg
+END
+DepthShadowmap.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmap.hlsl
+END
+DepthShadowmapNormalMapReceiverVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmapNormalMapReceiverVp.glsl
+END
+Swizzle.gp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Swizzle.gp
+END
+Bloom_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Bloom_ps20.hlsl
+END
+hdr.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr.hlsl
+END
+NightVisionFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/NightVisionFP.cg
+END
+Example_BumpMapping.cg
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_BumpMapping.cg
+END
+isosurf.cg
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/isosurf.cg
+END
+DepthShadowmapReceiverFp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmapReceiverFp.glsl
+END
+crowdVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/crowdVp.glsl
+END
+InvertFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/InvertFP.cg
+END
+instancing.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/instancing.cg
+END
+SwizzleGP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/SwizzleGP.cg
+END
+GlassFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/GlassFP.cg
+END
+Combine_fp.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Combine_fp.cg
+END
+OldMovieFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OldMovieFP.cg
+END
+Radial_Blur_FP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Radial_Blur_FP.cg
+END
+Blur0_vs11.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur0_vs11.hlsl
+END
+BrightBloom2_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/BrightBloom2_ps20.hlsl
+END
+DepthShadowmapCasterFp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmapCasterFp.glsl
+END
+Example_Fresnel.cg
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_Fresnel.cg
+END
+hdr_downscale3x3brightpass.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr_downscale3x3brightpass.glsl
+END
+OffsetMapping.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OffsetMapping.hlsl
+END
+DepthShadowmapReceiverVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmapReceiverVp.glsl
+END
+hdr.cg
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr.cg
+END
+hdr_bloom.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr_bloom.glsl
+END
+mrttestfp_scene.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/mrttestfp_scene.glsl
+END
+hdr_downscale2x2luminence.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr_downscale2x2luminence.glsl
+END
+pssm.cg
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/pssm.cg
+END
+varianceshadowcasterfp.cg
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/varianceshadowcasterfp.cg
+END
+OffsetMapping_specular.asm
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OffsetMapping_specular.asm
+END
+Example_Projection.cg
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Example_Projection.cg
+END
+DepthShadowmapCasterVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DepthShadowmapCasterVp.glsl
+END
+Ocean2HLSL_Cg.frag
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Ocean2HLSL_Cg.frag
+END
+Ocean2HLSL_Cg.vert
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Ocean2HLSL_Cg.vert
+END
+ParticleGS.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/ParticleGS.cg
+END
+oceanGLSL.frag
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/oceanGLSL.frag
+END
+SharpenEdgesFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/SharpenEdgesFP.cg
+END
+oceanGLSL.vert
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/oceanGLSL.vert
+END
+OffsetMappingFp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OffsetMappingFp.glsl
+END
+Blur0_ps20.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur0_ps20.hlsl
+END
+mrttestfp.hlsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/mrttestfp.hlsl
+END
+Blur0_vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur0_vs.glsl
+END
+Blur1_vs.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Blur1_vs.glsl
+END
+DitherFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/DitherFP.cg
+END
+BrightBloom2_ps20.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/BrightBloom2_ps20.glsl
+END
+varianceshadowcastervp.cg
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/varianceshadowcastervp.cg
+END
+HeatVision.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/HeatVision.cg
+END
+PosterizeFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/PosterizeFP.cg
+END
+GrayScale.cg
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/GrayScale.cg
+END
+ASCIIFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/ASCIIFP.cg
+END
+Ocean2GLSL.frag
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Ocean2GLSL.frag
+END
+OffsetMappingVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/OffsetMappingVp.glsl
+END
+Ocean2GLSL.vert
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/Ocean2GLSL.vert
+END
+StdQuad_vp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/StdQuad_vp.glsl
+END
+hdr_downscale3x3.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/hdr_downscale3x3.glsl
+END
+skinningTwoWeightsVp.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/skinningTwoWeightsVp.glsl
+END
+HalftoneFP.cg
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/python-ogre/!svn/ver/1097/branches/v1-6-4/demos/media/materials/programs/HalftoneFP.cg
+END

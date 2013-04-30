@@ -1,0 +1,165 @@
+material DD21-White/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Main-Hull/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Helo-Deck/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Dark-Hatche/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Cabin-X/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Main-Deck/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Cabin-Cubic/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Pipe/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Cabin-Z/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Arrays/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
+material DD21-Main-Rim/SOLID/TEX/ecsl.bmp
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			texture_unit
+			{
+				texture ecsl.bmp
+			}
+		}
+	}
+}
