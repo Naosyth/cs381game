@@ -1,6 +1,4 @@
 from vector import Vector3
-import command
-
 
 class EntityMgr:
     def __init__(self, engine):
@@ -11,7 +9,9 @@ class EntityMgr:
         self.ents = {}
         self.nEnts = 0
         import ent
-        self.entTypes = [ent.PlayerShip, ent.EnemyFighter]
+        self.playerType = ent.PlayerShip
+        self.escortTypes = [ent.EscortShip]
+        self.enemyTypes = [ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter]
         
         self.playerObject = None
 
@@ -21,12 +21,6 @@ class EntityMgr:
         ent.init()
         self.ents[self.nEnts] = ent;
         self.nEnts = self.nEnts + 1
-        
-        if ent.isPlayerControlled:
-            self.playerObject = ent
-        else:
-            ent.command = command.Chase(ent, self.playerObject)
-        
         return ent
 
     def tick(self, dt):

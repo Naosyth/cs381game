@@ -79,7 +79,7 @@ class PlayerShip(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         GenericShip.__init__(self, engine, id, pos, orientation, vel)
         self.mesh = 'Navitas.mesh'
-        self.uiname = 'fighter' + str(id)
+        self.uiname = 'player' + str(id)
 
         self.orientation = Quaternion()
         self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
@@ -111,6 +111,37 @@ class EnemyFighter(GenericShip):
         GenericShip.__init__(self, engine, id, pos, orientation, vel)
         self.mesh = 'Navitas.mesh'
         self.uiname = 'enemy' + str(id)
+
+        self.orientation = Quaternion()
+        self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
+
+        # Movement
+        self.acceleration = 20.0
+        self.turningRate  = 20.0
+        self.maxSpeed = 200.0
+        self.desiredSpeed = 0.0
+        self.yawRate = 0.0
+        self.pitchRate = 0.0
+        self.speed = 0.0
+        
+        self.scale = Vector3(2,2,2)
+        
+        # Control
+        self.isPlayerControlled = False
+        self.command = None
+        
+        # Other ship related data
+        self.isTargeted = False
+        self.health = 100.0
+        self.energy = 100.0
+        self.fireRate = 10.0
+        self.collideRadius = 500
+        
+class EscortShip(GenericShip):
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        GenericShip.__init__(self, engine, id, pos, orientation, vel)
+        self.mesh = 'Navitas.mesh'
+        self.uiname = 'escort' + str(id)
 
         self.orientation = Quaternion()
         self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))

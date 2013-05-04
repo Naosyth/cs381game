@@ -55,18 +55,18 @@ class ControlMgr:
                 if  self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_S):
                     self.toggle = self.toggleMax
                     self.playerObject.desiredSpeed = utils.clamp(self.playerObject.desiredSpeed - self.playerObject.acceleration, 0, self.playerObject.maxSpeed)
-                # Turn Left.
+                # Strafe Left.
                 if  self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_A):
                     pass
-                # Turn Right.
+                # Strafe Right.
                 if  self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_D):
                     pass
-                # Turn Up.
+                # Roll Left.
                 if  self.keyboard.isKeyDown(OIS.KC_Q):
                     temp = ogre.Quaternion()
                     temp.FromAngleAxis(self.playerObject.turningRate*dtime, ogre.Vector3(0, 0, 1))
                     self.playerObject.orientation *= temp
-                # Turn Down.
+                # Roll Right.
                 if  self.keyboard.isKeyDown(OIS.KC_E):
                     temp = ogre.Quaternion()
                     temp.FromAngleAxis(-self.playerObject.turningRate*dtime, ogre.Vector3(0, 0, 1))
