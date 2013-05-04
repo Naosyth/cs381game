@@ -1,6 +1,7 @@
-# Simple ORIENTED Physics for 38Engine
-# vel is rate of change of pos
-# Sushil Louis
+# Physics Aspect
+# Simple oriented 3D physics
+#
+# Brandon Worl
 
 #from vector import Vector3
 import ogre.renderer.OGRE as ogre

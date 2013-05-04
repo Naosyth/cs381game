@@ -37,6 +37,10 @@ class Engine(object):
         import controlMgr
         self.controlMgr = controlMgr.ControlMgr(self)
         self.controlMgr.init()
+        
+        import cameraMgr
+        self.cameraMgr = cameraMgr.CameraMgr(self)
+        self.cameraMgr.init()
 
 
     def stop(self):
@@ -63,6 +67,7 @@ class Engine(object):
 
             self.entityMgr.tick(dtime)
             self.gfxMgr.tick(dtime)
+            self.cameraMgr.tick(dtime)
             self.netMgr.tick(dtime)
             self.inputMgr.tick(dtime)
             self.selectionMgr.tick(dtime)

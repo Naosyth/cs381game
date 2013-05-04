@@ -118,7 +118,7 @@ class EnemyFighter(GenericShip):
         # Movement
         self.acceleration = 20.0
         self.turningRate  = 20.0
-        self.maxSpeed = 200.0
+        self.maxSpeed = 150.0
         self.desiredSpeed = 0.0
         self.yawRate = 0.0
         self.pitchRate = 0.0
@@ -155,7 +155,7 @@ class EscortShip(GenericShip):
         self.pitchRate = 0.0
         self.speed = 0.0
         
-        self.scale = Vector3(2,2,2)
+        self.scale = Vector3(20,20,20)
         
         # Control
         self.isPlayerControlled = False

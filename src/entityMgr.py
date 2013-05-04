@@ -1,3 +1,6 @@
+# Entity Manager
+# Stores the list of entities that will appear on the map, as well as the actual list of spawned entities
+
 from vector import Vector3
 
 class EntityMgr:

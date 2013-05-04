@@ -1,3 +1,6 @@
+# Game Manager
+# Handle the creation of all ships involved in the game, and assign initial AI commands
+
 from vector import Vector3
 import command
 
@@ -9,6 +12,7 @@ class GameMgr:
     def init(self):
         self.loadLevel()
 
+    # Load the player ship.
     def loadPlayer(self):
         self.engine.entityMgr.playerObject = self.engine.entityMgr.createEnt(self.engine.entityMgr.playerType, pos = Vector3(0, 0, 0))
 
@@ -16,6 +20,7 @@ class GameMgr:
         self.loadPlayer()
         self.game1()
 
+    # Load the various types of ships found in the game and assign AI commands as necessary
     def game1(self):
         x = 300
         for entType in self.engine.entityMgr.enemyTypes:

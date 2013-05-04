@@ -15,7 +15,6 @@ class GfxMgr:
         self.initializeResourceGroups()
         self.setupScene()
 
-
     def tick(self, dtime):
         self.root.renderOneFrame()
 
@@ -64,15 +63,7 @@ class GfxMgr:
         self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera)
         self.sceneManager.ambientLight = 1, 1, 1
  
-        # Setup a ground plane.
-        #plane = ogre.Plane ((0, 1, 0), -100)
-        #self.groundPlane = ogre.Plane ((0, 1, 0), -100)
-        #meshManager = ogre.MeshManager.getSingleton ()
-        #meshManager.createPlane ('Ground', 'General', self.groundPlane, 10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
-        #ent = self.sceneManager.createEntity('GroundEntity', 'Ground')
-        #self.sceneManager.getRootSceneNode().createChildSceneNode ().attachObject (ent)
-        #ent.setMaterialName ('OceanCg')
-        #ent.castShadows = False
+        # Create the sky box
         self.sceneManager.setSkyBox (True, "Examples/SpaceSkyBox", 5000, True)
         self.camYawNode = self.sceneManager.getRootSceneNode().createChildSceneNode('CamNode1', (0, 200, 400))
         self.camera.lookAt((0,0,0))
