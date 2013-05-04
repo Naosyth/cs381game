@@ -70,7 +70,7 @@ class Engine(object):
             self.gameMgr.tick(dtime)
             
             self.runTime += dtime
-        
+
             weu.messagePump()             # Needed for linux/mac
             time.sleep(0.001)
 

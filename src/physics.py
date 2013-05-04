@@ -16,7 +16,7 @@ class Physics:
         timeScaledAcceleration = self.ent.acceleration * dtime
         self.ent.speed += utils.clamp( self.ent.desiredSpeed - self.ent.speed, -timeScaledAcceleration, timeScaledAcceleration)
         
-        forwardVec = ogre.Vector3(1, 0, 0)
+        forwardVec = ogre.Vector3(0, 0, -1)
         currentDirection = self.ent.orientation * forwardVec
         
         self.ent.vel.x = currentDirection.x * self.ent.speed
@@ -29,9 +29,9 @@ class Physics:
         timeScaledRotation = self.ent.turningRate * dtime
         
         temp = ogre.Quaternion()
-        temp.FromAngleAxis(ogre.Degree(self.ent.yawRate), ogre.Vector3(0, 1, 0))
+        temp.FromAngleAxis((self.ent.yawRate*self.ent.turningRate)*dtime, ogre.Vector3(0, 1, 0))
         self.ent.orientation *= temp
 
         temp = ogre.Quaternion()
-        temp.FromAngleAxis(ogre.Degree(self.ent.pitchRate), ogre.Vector3(0, 0, 1))
+        temp.FromAngleAxis((self.ent.pitchRate*self.ent.turningRate)*dtime, ogre.Vector3(1, 0, 0))
         self.ent.orientation *= temp

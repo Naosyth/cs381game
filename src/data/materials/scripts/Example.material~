@@ -36,21 +36,6 @@ material Examples/OgreLogo
 		}
 	}
 }
-material Examples/borg
-{
-	technique
-	{
-		pass
-		{
-			ambient 0.1 0.1 0.1
-
-			texture_unit
-			{
-				texture borg.jpg
-			}
-		}
-	}
-}
 material Examples/DarkMaterial
 {
 	technique
@@ -77,7 +62,7 @@ material Examples/SpaceSkyBox
 
 			texture_unit
 			{
-				cubic_texture stevecube.jpg separateUV
+				cubic_texture spacesky.jpg separateUV
 				tex_address_mode clamp
 			}
 		}
@@ -316,7 +301,7 @@ material Examples/CloudySky
 			texture_unit
 			{
 				texture clouds.jpg
-				scroll_anim 0.15 0
+				scroll_anim 0.015 0
 			}
 		}
 	}

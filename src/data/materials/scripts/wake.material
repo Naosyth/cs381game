@@ -1,4 +1,4 @@
-material Water/Wake
+material Navitas/Trail
 {
    technique
    {
@@ -10,7 +10,25 @@ material Water/Wake
 
          texture_unit
          {
-            texture wake.png
+            texture flare2.png
+         }
+      }
+   }
+}
+
+material Navitas/Dust
+{
+   technique
+   {
+      pass
+      {
+         lighting off
+         scene_blend alpha_blend
+         depth_write off
+
+         texture_unit
+         {
+            texture flare2.png
          }
       }
    }

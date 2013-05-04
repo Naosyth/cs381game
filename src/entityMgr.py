@@ -1,4 +1,5 @@
 from vector import Vector3
+import command
 
 
 class EntityMgr:
@@ -10,7 +11,7 @@ class EntityMgr:
         self.ents = {}
         self.nEnts = 0
         import ent
-        self.entTypes = [ent.PlayerShip]
+        self.entTypes = [ent.PlayerShip, ent.EnemyFighter]
         
         self.playerObject = None
 
@@ -23,6 +24,8 @@ class EntityMgr:
         
         if ent.isPlayerControlled:
             self.playerObject = ent
+        else:
+            ent.command = command.Chase(ent, self.playerObject)
         
         return ent
 

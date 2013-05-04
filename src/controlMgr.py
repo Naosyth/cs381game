@@ -64,11 +64,11 @@ class ControlMgr:
                 # Turn Up.
                 if  self.keyboard.isKeyDown(OIS.KC_Q):
                     temp = ogre.Quaternion()
-                    temp.FromAngleAxis(ogre.Degree(-0.5), ogre.Vector3(1, 0, 0))
+                    temp.FromAngleAxis(self.playerObject.turningRate*dtime, ogre.Vector3(0, 0, 1))
                     self.playerObject.orientation *= temp
                 # Turn Down.
                 if  self.keyboard.isKeyDown(OIS.KC_E):
                     temp = ogre.Quaternion()
-                    temp.FromAngleAxis(ogre.Degree(0.5), ogre.Vector3(1, 0, 0))
+                    temp.FromAngleAxis(-self.playerObject.turningRate*dtime, ogre.Vector3(0, 0, 1))
                     self.playerObject.orientation *= temp
 

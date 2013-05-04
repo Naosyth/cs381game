@@ -59,22 +59,21 @@ class GfxMgr:
         self.sceneManager = self.root.createSceneManager(ogre.ST_GENERIC, "Default SceneManager")
 
         self.camera = self.sceneManager.createCamera("Camera")
-        self.camera.nearClipDistance = 5
+        self.camera.nearClipDistance = 0.1
 
         self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera)
         self.sceneManager.ambientLight = 1, 1, 1
  
         # Setup a ground plane.
         #plane = ogre.Plane ((0, 1, 0), -100)
-        self.groundPlane = ogre.Plane ((0, 1, 0), -100)
-        meshManager = ogre.MeshManager.getSingleton ()
-        meshManager.createPlane ('Ground', 'General', self.groundPlane,
-                                     10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
-        ent = self.sceneManager.createEntity('GroundEntity', 'Ground')
-        self.sceneManager.getRootSceneNode().createChildSceneNode ().attachObject (ent)
-        ent.setMaterialName ('OceanCg')
-        ent.castShadows = False
-        self.sceneManager.setSkyBox (True, "Examples/MorningSkyBox", 5000, False)
+        #self.groundPlane = ogre.Plane ((0, 1, 0), -100)
+        #meshManager = ogre.MeshManager.getSingleton ()
+        #meshManager.createPlane ('Ground', 'General', self.groundPlane, 10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
+        #ent = self.sceneManager.createEntity('GroundEntity', 'Ground')
+        #self.sceneManager.getRootSceneNode().createChildSceneNode ().attachObject (ent)
+        #ent.setMaterialName ('OceanCg')
+        #ent.castShadows = False
+        self.sceneManager.setSkyBox (True, "Examples/SpaceSkyBox", 5000, True)
         self.camYawNode = self.sceneManager.getRootSceneNode().createChildSceneNode('CamNode1', (0, 200, 400))
         self.camera.lookAt((0,0,0))
         self.camPitchNode = self.camYawNode.createChildSceneNode('PitchNode1')

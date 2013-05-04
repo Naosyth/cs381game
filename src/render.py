@@ -13,16 +13,22 @@ class Renderer:
         self.gent =  self.ent.engine.gfxMgr.sceneManager.createEntity(self.ent.uiname + "_ogreEnt", self.ent.mesh)
         self.node =  self.ent.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.ent.uiname + 'node', ent.pos)
         self.node.attachObject(self.gent)
+        self.node.scale(self.ent.scale)
 
         # Wake Particles
         self.wakeNode = self.node.createChildSceneNode()
-        self.wakeParticle = self.ent.engine.gfxMgr.sceneManager.createParticleSystem(self.ent.uiname + "Wake_ogreEnt", 'Water/Wake')
+        self.wakeParticle = self.ent.engine.gfxMgr.sceneManager.createParticleSystem(self.ent.uiname + "Wake_ogreEnt", 'Navitas/Trail')
         self.wakeNode.attachObject(self.wakeParticle)
+        
+        self.dustNode = self.node.createChildSceneNode()
+        self.dustParticle = self.ent.engine.gfxMgr.sceneManager.createParticleSystem(self.ent.uiname + "Dust_ogreEnt", 'Navitas/Dust')
+        self.dustNode.attachObject(self.dustParticle)
         
         # Chase Camera
         self.camera = self.ent.engine.gfxMgr.sceneManager.createCamera(self.ent.uiname + "_camera")
-        self.camera.position = self.ent.pos + ogre.Vector3(-150, 60, 0)
+        self.camera.position = self.ent.pos + ogre.Vector3(0, 0, 170)
         self.camera.lookAt(self.ent.pos)
+        self.camera.position = self.ent.pos + ogre.Vector3(20, 25, 170)
         self.node.attachObject(self.camera)
         
     def tick(self, dtime):
