@@ -1,0 +1,90 @@
+material GUI_Health_Bar
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 1 0 0
+			}
+		}
+	}
+}
+
+material GUI_Energy_Bar
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0 0 1
+			}
+		}
+	}
+}
+
+material GUI_Objective_Bar
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0 0 1
+			}
+		}
+	}
+}
+
+material GUI_Grey_Border
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0.2 0.2 0.2
+			}
+		}
+	}
+}
+
+material GUI_Grey_Background
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0.2 0.2 0.2
+				alpha_op_ex source1 src_manual src_current 0.5
+			}
+		}
+	}
+}
