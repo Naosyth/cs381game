@@ -41,7 +41,14 @@ class Engine(object):
         import cameraMgr
         self.cameraMgr = cameraMgr.CameraMgr(self)
         self.cameraMgr.init()
-
+        
+        import overlayMgr
+        self.overlayMgr = overlayMgr.OverlayMgr(self)
+        self.overlayMgr.init()
+        
+        import npcMgr
+        self.npcMgr = npcMgr.NPCMgr(self)
+        self.npcMgr.init()
 
     def stop(self):
         self.gfxMgr.stop()
@@ -73,6 +80,8 @@ class Engine(object):
             self.selectionMgr.tick(dtime)
             self.controlMgr.tick(dtime)
             self.gameMgr.tick(dtime)
+            self.overlayMgr.tick(dtime)
+            self.npcMgr.tick(dtime)
             
             self.runTime += dtime
 

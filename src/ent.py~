@@ -4,19 +4,20 @@
 import ogre.renderer.OGRE as ogre
 Quaternion = ogre.Quaternion
 
+import random
+import command
+
 from vector        import Vector3
-from physics       import Physics
-from render        import Renderer
+from physics       import ShipPhysics
+from physics       import ProjectilePhysics
+from render        import ShipRenderer
+from render        import ProjectileRenderer
 from unitAI        import UnitAI
 from collision     import Collision
 
 #-----------------------------------------------------------------------------------------
 class Entity:
-    pos  = Vector3(0, 0, 0)
-    orientation = Quaternion(0, 0, 0, 1);
-    vel  = Vector3(0, 0, 0)
-
-    aspectTypes = [Physics, Collision, Renderer, UnitAI]
+    aspectTypes = []
     
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         self.engine = engine
@@ -46,9 +47,11 @@ class Entity:
         return x
 #-----------------------------------------------------------------------------------------
 class GenericShip(Entity):
+    aspectTypes = [ShipPhysics, ShipRenderer, UnitAI]
+    
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         Entity.__init__(self, engine, id, pos, orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0))
-        self.uiname = 'generic' + str(id)
+        self.uiname = 'generic_ship' + str(id)
 
         self.orientation = Quaternion()
         self.orientation.FromAngleAxis(ogre.Degree(0), Vector3(0, 0, 1))
@@ -73,7 +76,32 @@ class GenericShip(Entity):
         self.health = 100.0
         self.energy = 100.0
         self.fireRate = 10.0
+        self.fireTimer = 0.0
+        self.canFire = True
+        self.attackRange = 1000
         self.collideRadius = 500
+        self.respawnTime = 10.0
+        self.respawnTimer = 0.0
+        self.killPoints = 0.0
+        
+    def tick(self, dtime):
+        Entity.tick(self, dtime)
+        if self.fireTimer < self.fireRate and not self.canFire:
+            self.fireTimer += dtime
+        else:
+            self.fireTimer = 0
+            self.canFire = True
+        
+        # Respawning
+        if not self.isPlayerControlled and self.health <= 0:
+            self.respawnTimer += dtime
+            if self.respawnTimer > self.respawnTime:
+                self.respawnTimer = 0
+                
+                # Respawn the ship somewhere around the escort ship
+                self.health = self.maxHealth
+                self.pos = self.engine.entityMgr.escortShip.pos + ogre.Vector3(random.randint(-600, 600), random.randint(-600, 600), random.randint(-600, 600))
+                self.command = command.Chase(self, random.choice([self.engine.entityMgr.playerObject, self.engine.entityMgr.escortShip]))
 #-----------------------------------------------------------------------------------------
 class PlayerShip(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
@@ -86,8 +114,8 @@ class PlayerShip(GenericShip):
 
         # Movement
         self.acceleration = 20.0
-        self.turningRate  = 3.14/2
-        self.maxSpeed = 200.0
+        self.turningRate  = 3.14/1.5
+        self.maxSpeed = 250.0
         self.desiredSpeed = 0.0
         self.yawRate = 0.0
         self.pitchRate = 0.0
@@ -101,10 +129,15 @@ class PlayerShip(GenericShip):
         
         # Other ship related data
         self.isTargeted = False
-        self.health = 100.0
+        self.health = 2000.0
+        self.maxHealth = 2000.0
         self.energy = 100.0
-        self.fireRate = 10.0
+        self.maxEnergy = 100.0
+        self.fireRate = 0.5
+        self.fireTimer = 0.0
+        self.canFire = True
         self.collideRadius = 500
+        self.score = 0
 
 class EnemyFighter(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
@@ -118,7 +151,7 @@ class EnemyFighter(GenericShip):
         # Movement
         self.acceleration = 20.0
         self.turningRate  = 20.0
-        self.maxSpeed = 200.0
+        self.maxSpeed = 150.0
         self.desiredSpeed = 0.0
         self.yawRate = 0.0
         self.pitchRate = 0.0
@@ -133,9 +166,17 @@ class EnemyFighter(GenericShip):
         # Other ship related data
         self.isTargeted = False
         self.health = 100.0
+        self.maxHealth = 100.0
         self.energy = 100.0
-        self.fireRate = 10.0
-        self.collideRadius = 500
+        self.maxEnergy = 100.0
+        self.fireRate = 4.0
+        self.fireTimer = 0.0
+        self.canFire = True
+        self.attackRange = 1000
+        self.collideRadius = 20
+        self.killPoints = 50
+        self.respawnTime = 20.0
+        self.respawnTimer = 0.0
         
 class EscortShip(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
@@ -163,8 +204,98 @@ class EscortShip(GenericShip):
         
         # Other ship related data
         self.isTargeted = False
-        self.health = 100.0
+        self.health = 5000.0
+        self.maxHealth = 5000.0
         self.energy = 100.0
+        self.maxEnergy = 100.0
         self.fireRate = 10.0
-        self.collideRadius = 500
+        self.fireTimer = 0.0
+        self.canFire = True
+        self.collideRadius = 50
+        self.killPoints = -1000
         
+class GenericProjectile(Entity):
+    aspectTypes = [ProjectilePhysics, Collision, ProjectileRenderer]
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        Entity.__init__(self, engine, id, pos, orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0))
+        self.uiname = 'generic_projectile' + str(id)
+
+        self.orientation = Quaternion()
+        self.orientation.FromAngleAxis(ogre.Degree(0), Vector3(0, 0, 1))
+        
+        # Movement
+        self.speed = 0.0
+        
+        self.scale = Vector3(1,1,1)
+        
+        # Other projectile related data
+        self.collideRadius = 500 
+        self.damage = 0
+        self.lifeTime = 5.0
+        self.lifeTimer = 0.0
+        self.isActive = False
+        self.oriented = False
+        self.source = None
+        
+    def tick(self, dtime):
+        Entity.tick(self, dtime)
+        
+        if self.lifeTimer < self.lifeTime and self.isActive:
+            self.lifeTimer += dtime
+        else:
+            self.lifeTimer = 0.0
+            self.isActive = False
+        
+    def fire(self, source):
+        self.source = source
+        self.orientation = source.orientation
+        self.pos = source.pos
+        self.isActive = True
+        
+class RailgunProjectile(GenericProjectile):
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        GenericProjectile.__init__(self, engine, id, pos, orientation, vel)
+        self.mesh = 'Navitas.mesh'
+        self.uiname = 'railgun_bullet' + str(id)
+        self.projType = 'railgunBullet'
+
+        self.orientation = Quaternion()
+        self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
+
+        # Movement
+        self.speed = 1600.0
+        
+        self.scale = Vector3(1,1,1)
+
+        # Other projectile related data
+        self.collideRadius = 2
+        self.damage = 60
+        self.lifeTime = 5.0
+        self.timeTimer = 0.0
+        self.isActive = False
+        self.oriented = False
+        self.source = None
+        
+class EnemyProjectile(GenericProjectile):
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        GenericProjectile.__init__(self, engine, id, pos, orientation, vel)
+        self.mesh = 'Navitas.mesh'
+        self.uiname = 'enemy_bullet' + str(id)
+        self.projType = 'enemyBullet'
+
+        self.orientation = Quaternion()
+        self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
+
+        # Movement
+        self.speed = 100.0
+        
+        self.scale = Vector3(1,1,1)
+
+        # Other projectile related data
+        self.collideRadius = 2
+        self.damage = 15
+        self.lifeTime = 5.0
+        self.timeTimer = 0.0
+        self.isActive = False
+        self.oriented = False
+        self.source = None

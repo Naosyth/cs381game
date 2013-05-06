@@ -54,7 +54,6 @@ class CameraMgr:
         # Holding shift to look around the ship
         # This needs to be improved
         if self.keyboard.isKeyDown(OIS.KC_LSHIFT):
-            #self.camera.orientation *= ogre.Quaternion(self.lookYaw, upVec) * ogre.Quaternion(self.lookPitch, rightVec)
             dir = self.camera.position-self.playerObject.pos
             dir.normalise()
             right = ogre.Vector3(dir.z,0,-dir.x)

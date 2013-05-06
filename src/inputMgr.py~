@@ -89,8 +89,11 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         return True
 
     def mousePressed(self, evt, id):
-        if id == OIS.MB_Left:
-            pass # Fire projectile
+        playerObject = self.engine.entityMgr.playerObject
+        if id == OIS.MB_Left and playerObject.canFire:
+            bullet = self.engine.entityMgr.getNextProjectile("railgunBullet")
+            bullet.fire(playerObject)
+            playerObject.canFire = False
         if id == OIS.MB_Right:
             pass # Future plans?
         return True

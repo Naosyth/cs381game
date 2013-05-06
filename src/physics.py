@@ -8,11 +8,14 @@ import ogre.renderer.OGRE as ogre
 import utils
 import math
 
-class Physics:
+class ShipPhysics:
     def __init__(self, ent):
         self.ent = ent
         
     def tick(self, dtime):
+        if self.ent.health <= 0:
+            return
+            
         #----------position-----------------------------------
         timeScaledAcceleration = self.ent.acceleration * dtime
         self.ent.speed += utils.clamp( self.ent.desiredSpeed - self.ent.speed, -timeScaledAcceleration, timeScaledAcceleration)
@@ -36,3 +39,18 @@ class Physics:
         temp = ogre.Quaternion()
         temp.FromAngleAxis((self.ent.pitchRate*self.ent.turningRate)*dtime, ogre.Vector3(1, 0, 0))
         self.ent.orientation *= temp
+        
+class ProjectilePhysics:
+    def __init__(self, ent):
+        self.ent = ent
+        
+    def tick(self, dtime):
+        if not self.ent.isActive:
+            return
+            
+        #----------position-----------------------------------
+        forwardVec = ogre.Vector3(0, 0, -1)
+        currentDirection = self.ent.orientation * forwardVec
+        
+        self.ent.vel = currentDirection * self.ent.speed
+        self.ent.pos = self.ent.pos + (self.ent.vel * dtime)

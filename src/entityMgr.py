@@ -11,12 +11,16 @@ class EntityMgr:
     def init(self):
         self.ents = {}
         self.nEnts = 0
+        self.projectiles = {}
+        self.nProjectiles = 0
         import ent
         self.playerType = ent.PlayerShip
-        self.escortTypes = [ent.EscortShip]
+        self.escortType = ent.EscortShip
         self.enemyTypes = [ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter]
+        self.projectileTypes = [ent.RailgunProjectile, ent.EnemyProjectile]
         
         self.playerObject = None
+        self.escortShip = None
 
     def createEnt(self, entType, pos = Vector3(0,0,0)):
         ent = entType(self.engine, self.nEnts, pos = pos)
@@ -25,9 +29,24 @@ class EntityMgr:
         self.ents[self.nEnts] = ent;
         self.nEnts = self.nEnts + 1
         return ent
+        
+    def createProjectile(self, entType, pos = Vector3(0,0,0)):
+        ent = entType(self.engine, self.nProjectiles, pos = pos)
+        ent.init()
+        self.projectiles[self.nProjectiles] = ent;
+        self.nProjectiles += 1
+        return ent
+        
+    def getNextProjectile(self, projType):
+        for eid, proj in self.projectiles.iteritems():
+            if not proj.isActive and proj.projType == projType:
+                return proj
+        return self.projectiles[0]
 
     def tick(self, dt):
         for eid, ent in self.ents.iteritems():
             ent.tick(dt)
+        for eid, proj in self.projectiles.iteritems():
+            proj.tick(dt)
         
 

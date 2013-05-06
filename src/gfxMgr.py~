@@ -1,5 +1,6 @@
 # Graphics manager
 import ogre.renderer.OGRE as ogre
+import ogre.gui.CEGUI as CEGUI
 
 # Manages graphics. Creates graphics, scene, scene nodes, renders scene
 class GfxMgr:
@@ -63,6 +64,7 @@ class GfxMgr:
         self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera)
         self.sceneManager.ambientLight = 1, 1, 1
  
+        # Create the sky box
         self.sceneManager.setSkyBox (True, "Examples/SpaceSkyBox", 5000, True)
         self.camYawNode = self.sceneManager.getRootSceneNode().createChildSceneNode('CamNode1', (0, 200, 400))
         self.camera.lookAt((0,0,0))

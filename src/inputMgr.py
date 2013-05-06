@@ -24,8 +24,8 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         if os.name == "nt":
             t = [("w32_mouse","DISCL_FOREGROUND"), ("w32_mouse", "DISCL_NONEXCLUSIVE")]
         else:
-            t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "false")]
-            #t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "true")]
+            #t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "false")]
+            t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "true")]
 
         paramList.extend(t)
 
@@ -89,8 +89,11 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         return True
 
     def mousePressed(self, evt, id):
-        if id == OIS.MB_Left:
-            pass # Fire projectile
+        playerObject = self.engine.entityMgr.playerObject
+        if id == OIS.MB_Left and playerObject.canFire:
+            bullet = self.engine.entityMgr.getNextProjectile("railgunBullet")
+            bullet.fire(playerObject)
+            playerObject.canFire = False
         if id == OIS.MB_Right:
             pass # Future plans?
         return True

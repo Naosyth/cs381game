@@ -6,7 +6,7 @@ import ogre.io.OIS as OIS
 class CameraMgr:
     def __init__(self, engine):
         self.engine = engine
-        print "Camera Manager Constructed "
+        print "Camera Manager Constructed"
         
     def init(self):
         self.keyboard = self.engine.inputMgr.keyboard

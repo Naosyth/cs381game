@@ -13,11 +13,15 @@ class Collision:
         self.collideRadius = ent.collideRadius
         
     def tick(self, dtime):
+        if not self.ent.isActive:
+            return
+        
         for eid, ent in self.ent.engine.entityMgr.ents.iteritems():
-            # Get distance of ent and compare to others.  Set collide flag if within radius
-            if self.id != eid:
+            if not ent == self.ent.source and ent.health > 0:
                 self.distance = self.ent.pos.squaredDistance(ent.pos)
-                if self.distance <= self.collideRadius:
-                    pass #print "Collision detected"
-                else:
-                    pass #print "Distance: " + str(self.distance)
+                if self.distance <= self.collideRadius*self.collideRadius + ent.collideRadius*ent.collideRadius:
+                    ent.health -= self.ent.damage
+                    self.ent.isActive = False
+                    
+                    if ent.health <= 0:
+                        self.ent.engine.entityMgr.playerObject.score += ent.killPoints
