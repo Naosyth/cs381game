@@ -142,7 +142,7 @@ class PlayerShip(GenericShip):
 class EnemyFighter(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         GenericShip.__init__(self, engine, id, pos, orientation, vel)
-        self.mesh = 'Navitas.mesh'
+        self.mesh = 'EnemyFighter.mesh'
         self.uiname = 'enemy' + str(id)
 
         self.orientation = Quaternion()
@@ -181,7 +181,7 @@ class EnemyFighter(GenericShip):
 class EscortShip(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         GenericShip.__init__(self, engine, id, pos, orientation, vel)
-        self.mesh = 'Navitas.mesh'
+        self.mesh = 'EscortShip.mesh'
         self.uiname = 'escort' + str(id)
 
         self.orientation = Quaternion()
@@ -196,7 +196,7 @@ class EscortShip(GenericShip):
         self.pitchRate = 0.0
         self.speed = 0.0
         
-        self.scale = Vector3(20,20,20)
+        self.scale = Vector3(30,30,30)
         
         # Control
         self.isPlayerControlled = False
@@ -255,7 +255,7 @@ class GenericProjectile(Entity):
 class RailgunProjectile(GenericProjectile):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         GenericProjectile.__init__(self, engine, id, pos, orientation, vel)
-        self.mesh = 'Navitas.mesh'
+        self.mesh = 'sphere.mesh'
         self.uiname = 'railgun_bullet' + str(id)
         self.projType = 'railgunBullet'
 
@@ -265,7 +265,7 @@ class RailgunProjectile(GenericProjectile):
         # Movement
         self.speed = 1600.0
         
-        self.scale = Vector3(1,1,1)
+        self.scale = Vector3(0.01,0.01,0.01)
 
         # Other projectile related data
         self.collideRadius = 2
@@ -279,7 +279,7 @@ class RailgunProjectile(GenericProjectile):
 class EnemyProjectile(GenericProjectile):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         GenericProjectile.__init__(self, engine, id, pos, orientation, vel)
-        self.mesh = 'Navitas.mesh'
+        self.mesh = 'sphere.mesh'
         self.uiname = 'enemy_bullet' + str(id)
         self.projType = 'enemyBullet'
 
@@ -287,9 +287,9 @@ class EnemyProjectile(GenericProjectile):
         self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
 
         # Movement
-        self.speed = 100.0
+        self.speed = 200.0
         
-        self.scale = Vector3(1,1,1)
+        self.scale = Vector3(0.01,0.01,0.01)
 
         # Other projectile related data
         self.collideRadius = 2

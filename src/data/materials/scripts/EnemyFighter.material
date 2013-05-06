@@ -1,0 +1,142 @@
+
+material _missing_material_
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            ambient 0.1 0.1 0.1 1.0
+            diffuse 0.8 0.0 0.0 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.3 0.3 0.3 1.0
+        }
+    }
+}
+
+// Fighter_Base genrated by blender2ogre 0.5.9
+
+material Fighter_Base 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Fighter_Base
+        {
+            ambient 0.288296639919281 0.13845618069171906 0.17683954536914825 1.0
+            diffuse 0.23063731537218857 0.11076494620390154 0.14147163840341026 1.0
+            specular 0.02267631740415066 0.02267631740415066 0.02267631740415066 1.0 83.75
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture metal1.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex add_signed src_texture src_current
+            }
+        }
+    }
+}
+// Fighter_Accent genrated by blender2ogre 0.5.9
+
+material Fighter_Accent 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Fighter_Accent
+        {
+            ambient 0.38437479734420776 0.38437479734420776 0.38437479734420776 1.0
+            diffuse 0.30749984245747086 0.30749984245747086 0.30749984245747086 1.0
+            specular 0.04065046788186866 0.04065046788186866 0.04065046788186866 1.0 91.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture metal1.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex add_signed src_texture src_current
+            }
+        }
+    }
+}
+// Fighter_Weapon genrated by blender2ogre 0.5.9
+
+material Fighter_Weapon 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Fighter_Weapon
+        {
+            ambient 0.800000011920929 0.0 0.01862945593893528 1.0
+            diffuse 0.6400000190734865 0.0 0.014903564973228645 1.0
+            specular 1.0 0.028639376163482666 0.0 1.0 36.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture metal1.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex add_signed src_texture src_current
+            }
+        }
+    }
+}

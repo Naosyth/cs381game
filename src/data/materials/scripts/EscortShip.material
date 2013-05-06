@@ -14,41 +14,6 @@ material _missing_material_
     }
 }
 
-// Cargo_Base genrated by blender2ogre 0.5.9
-
-material Cargo_Base 
-{
-    receive_shadows on 
-
-    technique
-    {
-        pass Cargo_Base
-        {
-            ambient 0.03708997368812561 0.10247337818145752 0.07410832494497299 1.0
-            diffuse 0.02967197939264743 0.08197870376674388 0.05928666083941847 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
-            emissive 0.0 0.0 0.0 1.0
-
-            alpha_to_coverage off
-            colour_write on
-            cull_hardware clockwise
-            depth_check on
-            depth_func less_equal
-            depth_write on
-            illumination_stage 
-            light_clip_planes off
-            light_scissor off
-            lighting on
-            normalise_normals off
-            polygon_mode solid
-            scene_blend one zero
-            scene_blend_op add
-            shading gouraud
-            transparent_sorting on
-
-        }
-    }
-}
 // Cargo_EngineFlaps genrated by blender2ogre 0.5.9
 
 material Cargo_EngineFlaps 
@@ -61,7 +26,7 @@ material Cargo_EngineFlaps
         {
             ambient 0.14702731370925903 0.20507878065109253 0.19461780786514282 1.0
             diffuse 0.11762185272010939 0.1640630269656036 0.15569424861213932 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
+            specular 0.14646464586257935 0.14646464586257935 0.14646464586257935 1.0 82.25
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -81,76 +46,13 @@ material Cargo_EngineFlaps
             shading gouraud
             transparent_sorting on
 
-        }
-    }
-}
-// Cargo_BaseHighlight genrated by blender2ogre 0.5.9
-
-material Cargo_BaseHighlight 
-{
-    receive_shadows on 
-
-    technique
-    {
-        pass Cargo_BaseHighlight
-        {
-            ambient 0.008093412965536118 0.02037881314754486 0.015361512079834938 1.0
-            diffuse 0.006474730468909895 0.016303050760970272 0.012289209846991445 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
-            emissive 0.0 0.0 0.0 1.0
-
-            alpha_to_coverage off
-            colour_write on
-            cull_hardware clockwise
-            depth_check on
-            depth_func less_equal
-            depth_write on
-            illumination_stage 
-            light_clip_planes off
-            light_scissor off
-            lighting on
-            normalise_normals off
-            polygon_mode solid
-            scene_blend one zero
-            scene_blend_op add
-            shading gouraud
-            transparent_sorting on
-
-        }
-    }
-}
-// Cargo_EngineCover genrated by blender2ogre 0.5.9
-
-material Cargo_EngineCover 
-{
-    receive_shadows on 
-
-    technique
-    {
-        pass Cargo_EngineCover
-        {
-            ambient 0.14702731370925903 0.20507878065109253 0.19461780786514282 1.0
-            diffuse 0.11762185272010939 0.1640630269656036 0.15569424861213932 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
-            emissive 0.0 0.0 0.0 1.0
-
-            alpha_to_coverage off
-            colour_write on
-            cull_hardware clockwise
-            depth_check on
-            depth_func less_equal
-            depth_write on
-            illumination_stage 
-            light_clip_planes off
-            light_scissor off
-            lighting on
-            normalise_normals off
-            polygon_mode solid
-            scene_blend one zero
-            scene_blend_op add
-            shading gouraud
-            transparent_sorting on
-
+            texture_unit 
+            {
+                texture metal2.jpg
+                tex_address_mode wrap
+                scale 0.5 0.5
+                colour_op_ex add_signed src_texture src_current
+            }
         }
     }
 }
@@ -166,7 +68,7 @@ material Cargo_Engine1
         {
             ambient 0.014443856664001942 0.014443856664001942 0.014443856664001942 1.0
             diffuse 0.011555085503385742 0.011555085503385742 0.011555085503385742 1.0
-            specular 0.0 0.0 0.0 1.0 12.5
+            specular 0.0 0.0 0.0 1.0 95.0
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -186,41 +88,13 @@ material Cargo_Engine1
             shading gouraud
             transparent_sorting on
 
-        }
-    }
-}
-// Cargo_Engine2 genrated by blender2ogre 0.5.9
-
-material Cargo_Engine2 
-{
-    receive_shadows on 
-
-    technique
-    {
-        pass Cargo_Engine2
-        {
-            ambient 0.20074784755706787 0.012085538357496262 0.012085530906915665 1.0
-            diffuse 0.16059828043875513 0.009668430830067853 0.009668424869603287 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
-            emissive 0.0 0.0 0.0 1.0
-
-            alpha_to_coverage off
-            colour_write on
-            cull_hardware clockwise
-            depth_check on
-            depth_func less_equal
-            depth_write on
-            illumination_stage 
-            light_clip_planes off
-            light_scissor off
-            lighting on
-            normalise_normals off
-            polygon_mode solid
-            scene_blend one zero
-            scene_blend_op add
-            shading gouraud
-            transparent_sorting on
-
+            texture_unit 
+            {
+                texture metal2.jpg
+                tex_address_mode wrap
+                scale 0.5 0.5
+                colour_op_ex add_signed src_texture src_current
+            }
         }
     }
 }
@@ -236,7 +110,7 @@ material Cargo_Engine3
         {
             ambient 0.800000011920929 0.793335497379303 0.0 1.0
             diffuse 0.6400000190734865 0.6346684073607385 0.0 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
+            specular 0.0 0.0 0.0 1.0 0.25
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -256,6 +130,13 @@ material Cargo_Engine3
             shading gouraud
             transparent_sorting on
 
+            texture_unit 
+            {
+                texture plasma.png
+                tex_address_mode wrap
+                scale 0.5 0.5
+                colour_op_ex add_signed src_texture src_current
+            }
         }
     }
 }
@@ -271,7 +152,7 @@ material Cargo_Base.001
         {
             ambient 0.14193826913833618 0.15743374824523926 0.10604041814804077 1.0
             diffuse 0.11355061700270497 0.12594700047294793 0.08483233578253291 1.0
-            specular 0.15000000596046448 0.15000000596046448 0.15000000596046448 1.0 12.5
+            specular 0.15000000596046448 0.15000000596046448 0.15000000596046448 1.0 50.25
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -291,6 +172,13 @@ material Cargo_Base.001
             shading gouraud
             transparent_sorting on
 
+            texture_unit 
+            {
+                texture metal2.jpg
+                tex_address_mode wrap
+                scale 0.5 0.5
+                colour_op_ex add_signed src_texture src_current
+            }
         }
     }
 }
@@ -306,7 +194,7 @@ material Cargo_Windows
         {
             ambient 0.800000011920929 0.800000011920929 0.800000011920929 0.5
             diffuse 0.6400000190734865 0.6400000190734865 0.6400000190734865 0.5
-            specular 0.5 0.5 0.5 0.5 12.5
+            specular 0.277777761220932 0.277777761220932 0.277777761220932 0.5 55.75
             emissive 0.0 0.0 0.0 0.5
 
             alpha_to_coverage off
@@ -341,7 +229,7 @@ material Cargo_LowerTube
         {
             ambient 0.14664264023303986 0.20358772575855255 0.19449543952941895 1.0
             diffuse 0.11731411393454838 0.16287018303379686 0.15559635394210147 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
+            specular 0.13636362552642822 0.13636362552642822 0.13636362552642822 1.0 127.75
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -361,6 +249,13 @@ material Cargo_LowerTube
             shading gouraud
             transparent_sorting on
 
+            texture_unit 
+            {
+                texture metal1.jpg
+                tex_address_mode wrap
+                scale 0.5 0.5
+                colour_op_ex add_signed src_texture src_current
+            }
         }
     }
 }
@@ -376,7 +271,7 @@ material Cargo_BaseHighlight.001
         {
             ambient 0.0344744548201561 0.037409815937280655 0.028374873101711273 1.0
             diffuse 0.027579564267092405 0.029927853195784282 0.022699898819623865 1.0
-            specular 0.20000000298023224 0.20000000298023224 0.20000000298023224 1.0 12.5
+            specular 0.04848484694957733 0.04848484694957733 0.04848484694957733 1.0 44.5
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -396,6 +291,13 @@ material Cargo_BaseHighlight.001
             shading gouraud
             transparent_sorting on
 
+            texture_unit 
+            {
+                texture metal1.jpg
+                tex_address_mode wrap
+                scale 0.5 0.5
+                colour_op_ex add_signed src_texture src_current
+            }
         }
     }
 }
