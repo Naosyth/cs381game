@@ -6,7 +6,7 @@ import ogre.io.OIS as OIS
 class CameraMgr:
     def __init__(self, engine):
         self.engine = engine
-        print "Camera Manager Constructed "
+        print "Camera Manager Constructed"
         
     def init(self):
         self.keyboard = self.engine.inputMgr.keyboard
@@ -25,6 +25,9 @@ class CameraMgr:
         pass
         
     def tick(self, dtime):
+        if self.playerObject == None
+            self.playerObject = self.engine.entityMgr.playerObject
+            
         self.screenWidth = self.engine.gfxMgr.viewPort.getActualWidth()
         self.screenHeight = self.engine.gfxMgr.viewPort.getActualHeight()
         

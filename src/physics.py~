@@ -13,6 +13,9 @@ class ShipPhysics:
         self.ent = ent
         
     def tick(self, dtime):
+        if self.ent.health <= 0:
+            return
+            
         #----------position-----------------------------------
         timeScaledAcceleration = self.ent.acceleration * dtime
         self.ent.speed += utils.clamp( self.ent.desiredSpeed - self.ent.speed, -timeScaledAcceleration, timeScaledAcceleration)

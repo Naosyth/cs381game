@@ -8,32 +8,98 @@ class OverlayMgr:
         
     def init(self):
         self.overlayManager = ogre.OverlayManager.getSingleton()
-        self.overlay = self.overlayManager.create("GUIOverlay")
-    
-        self.playerObject = self.engine.entityMgr.playerObject
-        self.escortShip = self.engine.entityMgr.escortShip
         
-        # Create overlays
-        self.createPlayerGUI()     
+        self.overlayList = []
+        self.loadOverlays()
+        self.currentOverlay = ""
+        self.setOverlay("Splash")
         
-    def createPlayerGUI(self):
+    def loadOverlays(self):
+        self.overlayList.append(SplashOverlay(self.engine, self.overlayManager))
+        self.overlayList.append(GameOverlay(self.engine, self.overlayManager))
+        self.overlayList.append(CreditsOverlay(self.engine, self.overlayManager))
+        
+    def setOverlay(self, name):
+        self.currentOverlay = name
+        for overlay in self.overlayList:
+            overlay.setVisible(overlay.name == name)
+        
+    def getOverlayByName(self, name):
+        for overlay in self.overlayList:
+            if overlay.name == self.currentOverlay:
+                return overlay
+        
+    def tick(self, dtime):
+        for overlay in self.overlayList:
+            if overlay.name == self.currentOverlay:
+                overlay.tick(dtime)
+     
+class Overlay:
+    def __init__(self, engine, overlayManager, name):
+        self.engine = engine
+        
+        self.name = name
+        self.overlayManager = overlayManager
+        self.overlay = self.overlayManager.create(self.name + "Overlay")
+        
+    def setVisible(self, isVisible):
+        if isVisible:
+            self.overlay.show()
+        else:
+            self.overlay.hide()
+            
+class SplashOverlay(Overlay):
+    name = "Splash"
+    def __init__(self, engine, overlayManager):
+        Overlay.__init__(self, engine, overlayManager, self.name)
+
+        self.loadOverlay()
+        
+    def loadOverlay(self):
+        # Special Features
+        # Rotating camera
+        self.camera = self.engine.gfxMgr.sceneManager.createCamera(self.name+"_camera")
+        self.engine.gfxMgr.viewPort.setCamera(self.camera)
+        
+        # Static ship
+        
+        # Static asteroids
+        
+        # ---------- Logo Graphic ----------------------------------------
+        panel = self.overlayManager.createOverlayElement("Panel", self.name+"_Logo")
+        panel.setPosition(0.1, 0.1)
+        panel.setDimensions(0.8, 0.8)
+        panel.setMaterialName("Splash_Logo")
+        
+        self.overlay.add2D(panel)
+        # --------------------------------------------------
+        
+    def tick(self, dtime):
+        self.camera.yaw(-3.14/60*dtime)
+        
+class GameOverlay(Overlay):
+    name = "Game"
+    def __init__(self, engine, overlayManager):
+        Overlay.__init__(self, engine, overlayManager, self.name)
+
+        self.loadOverlay()
+        
+        self.showHelp = False
+        
+    def loadOverlay(self):
         # ---------- GUI Background ----------------------------------------
-        # GUI panel
-        guiPanel = self.overlayManager.createOverlayElement("BorderPanel", "GUIPanel")
+        guiPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_GUIPanel")
         guiPanel.setPosition(0.835, 0.005)
         guiPanel.setDimensions(0.16, 0.12)
         guiPanel.setMaterialName("GUI_Grey_Background")
         guiPanel.setBorderMaterialName("GUI_Grey_Border")
         guiPanel.setBorderSize(0.003)
         
-        # Add panel to overlay
         self.overlay.add2D(guiPanel)
-        self.overlay.show()
         # --------------------------------------------------
     
         # ---------- Health Bar ----------------------------------------
-        # Health panel
-        healthPanel = self.overlayManager.createOverlayElement("BorderPanel", "HealthPanel")
+        healthPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_HealthPanel")
         healthPanel.setPosition(0.84, 0.01)
         healthPanel.setDimensions(0.15, 0.02)
         healthPanel.setMaterialName("GUI_Health_Bar")
@@ -41,15 +107,11 @@ class OverlayMgr:
         healthPanel.setBorderSize(0.003)
         
         self.healthPanel = healthPanel
-        
-        # Add panel to overlay
         self.overlay.add2D(healthPanel)
-        self.overlay.show()
         # --------------------------------------------------
         
         # ---------- Energy Bar ----------------------------------------
-        # Energy Panel
-        energyPanel = self.overlayManager.createOverlayElement("BorderPanel", "EnergyPanel")
+        energyPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_EnergyPanel")
         energyPanel.setPosition(0.84, 0.04)
         energyPanel.setDimensions(0.15, 0.02)
         energyPanel.setMaterialName("GUI_Energy_Bar")
@@ -57,81 +119,87 @@ class OverlayMgr:
         energyPanel.setBorderSize(0.003)
         
         self.energyPanel = energyPanel
-        
-        # Add panel to overlay
         self.overlay.add2D(energyPanel)
-        self.overlay.show()
         # --------------------------------------------------
         
         # ---------- Score Text ----------------------------------------
-        # Score panel
-        scorePanel = self.overlayManager.createOverlayElement("Panel", "ScorePanel")
+        scorePanel = self.overlayManager.createOverlayElement("Panel", self.name+"_ScorePanel")
         scorePanel.setPosition(0.845, 0.08)
         scorePanel.setDimensions(0.15, 0.04)
         
-        # Score panel text
-        scoreText = self.overlayManager.createOverlayElement("TextArea", "ScoreText")
+        scoreText = self.overlayManager.createOverlayElement("TextArea", self.name+"_ScoreText")
         scoreText.setMetricsMode(ogre.GMM_PIXELS)
         scoreText.setFontName("BlueHighway")
         scoreText.setCharHeight(20)
-        scoreText.setColourBottom(ogre.ColourValue(1, 1, 1))
-        scoreText.setColourTop(ogre.ColourValue(1, 1, 1))
-        scoreText.show()
-        
-        # Link panel to text
-        self.scorePanel = scoreText
-        self.scorePanel.textArea = scoreText
+        scoreText.setColour(ogre.ColourValue(1, 1, 1))
         scorePanel.addChild(scoreText)
         
-        # Add panel to overlay
+        self.scorePanel = scoreText
+        self.scorePanel.textArea = scoreText
         self.overlay.add2D(scorePanel)
-        self.overlay.show()
         # --------------------------------------------------
         
         # ---------- Escort Ship Health Bar ----------------------------------------
-        # Energy Panel
-        escortHealthPanel = self.overlayManager.createOverlayElement("BorderPanel", "EscortHealthPanel")
+        escortHealthPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_EscortHealthPanel")
         escortHealthPanel.setPosition(0.25, 0.03)
         escortHealthPanel.setDimensions(0.50, 0.03)
         escortHealthPanel.setMaterialName("GUI_Objective_Bar")
         escortHealthPanel.setBorderMaterialName("GUI_Grey_Border")
-        escortHealthPanel.setBorderSize(0.003, 0.00156+0.144*(1/(self.playerObject.energy)), 0.003, 0.003)
         escortHealthPanel.setBorderSize(0.003)
         
         self.escortHealthPanel = escortHealthPanel
-        
-        # Add panel to overlay
         self.overlay.add2D(escortHealthPanel)
-        self.overlay.show()
+        # --------------------------------------------------
+        
+        # ---------- Crosshair ----------------------------------------
+        crosshairPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_CrosshairPanel")
+        crosshairPanel.setPosition(0.495, 0.53)
+        crosshairPanel.setDimensions(0.01, 0.01)
+        crosshairPanel.setBorderMaterialName("GUI_Objective_Bar")
+        crosshairPanel.setBorderSize(0.0015)
+        
+        self.crosshairPanel = crosshairPanel
+        self.overlay.add2D(crosshairPanel)
         # --------------------------------------------------
         
         # ---------- Bottom Text ----------------------------------------
-        # Bottom panel
-        bottomPanel = self.overlayManager.createOverlayElement("Panel", "BottomPanel")
+        bottomPanel = self.overlayManager.createOverlayElement("Panel", self.name+"_BottomPanel")
         bottomPanel.setPosition(0.25, 0.90)
         bottomPanel.setDimensions(0.50, 0.06)
         
-        # Score panel text
-        bottomText = self.overlayManager.createOverlayElement("TextArea", "BottomText")
+        bottomText = self.overlayManager.createOverlayElement("TextArea", self.name+"_BottomText")
         bottomText.setMetricsMode(ogre.GMM_PIXELS)
         bottomText.setFontName("BlueHighway")
         bottomText.setCharHeight(30)
-        bottomText.setColourBottom(ogre.ColourValue(1, 1, 1))
-        bottomText.setColourTop(ogre.ColourValue(1, 1, 1))
-        bottomText.show()
-        
-        # Link panel to text
-        self.bottomPanel = bottomText
-        self.bottomPanel.textArea = bottomText
+        bottomText.setColour(ogre.ColourValue(1, 1, 1))
         bottomPanel.addChild(bottomText)
         
-        # Add panel to overlay
+        self.bottomPanel = bottomText
+        self.bottomPanel.textArea = bottomText
         self.overlay.add2D(bottomPanel)
-        self.overlay.show()
+        # --------------------------------------------------
+        
+        # ---------- Help Screen ----------------------------------------
+        help = self.overlayManager.createOverlayElement("Panel", self.name+"_Help")
+        help.setPosition(0.1, 0.1)
+        help.setDimensions(0.8, 0.8)
+        help.setMaterialName("Game_Help")
+        help.hide()
+        
+        self.help = help
+        self.overlay.add2D(help)
         # --------------------------------------------------
         
     def tick(self, dtime):
-        if not self.playerObject == None:
+        self.playerObject = self.engine.entityMgr.playerObject
+        self.escortShip = self.engine.entityMgr.escortShip
+    
+        if self.showHelp:    
+            self.help.show()
+        else:
+            self.help.hide()
+        
+        if not self.playerObject == None and not self.escortShip == None:
             # Ship and player info
             self.healthPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.health/self.playerObject.maxHealth)), 0.003, 0.003)
             self.energyPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.energy/self.playerObject.maxEnergy)), 0.003, 0.003)
@@ -141,5 +209,43 @@ class OverlayMgr:
             self.escortHealthPanel.setBorderSize(0.003, 0.003+0.49544*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
             
             # Bottom text
-            #self.bottomPanel.textArea.setCaption("Protect the cargo ship from enemy fighters!")
+            self.bottomPanel.textArea.setCaption(self.engine.gameMgr.gameBottomText)
 
+class CreditsOverlay(Overlay):
+    name = "Credits"
+    def __init__(self, engine, overlayManager):
+        Overlay.__init__(self, engine, overlayManager, self.name)
+
+        self.loadOverlay()
+        
+    def loadOverlay(self):        
+        # ---------- Winner Graphic ----------------------------------------
+        winPanel = self.overlayManager.createOverlayElement("Panel", self.name+"_Win")
+        winPanel.setPosition(0.1, 0.1)
+        winPanel.setDimensions(0.8, 0.8)
+        winPanel.setMaterialName("Credits_Win")
+        winPanel.hide()
+        
+        self.winPanel = winPanel
+        
+        self.overlay.add2D(winPanel)
+        # --------------------------------------------------
+        
+        # ---------- Loser Graphic ----------------------------------------
+        losePanel = self.overlayManager.createOverlayElement("Panel", self.name+"_Lose")
+        losePanel.setPosition(0.1, 0.1)
+        losePanel.setDimensions(0.8, 0.8)
+        losePanel.setMaterialName("Credits_Lose")
+        losePanel.hide()
+        
+        self.losePanel = losePanel
+        
+        self.overlay.add2D(losePanel)
+        # --------------------------------------------------
+        
+    def tick(self, dtime):
+        if self.engine.gameMgr.won == True:
+            self.winPanel.show()
+        else:
+            self.losePanel.show()
+        pass

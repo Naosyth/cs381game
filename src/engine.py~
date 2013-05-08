@@ -6,13 +6,14 @@ class Engine(object):
     '''
 
     def __init__(self):
-        pass
+        self.paused = True
 
     def init(self):
+        self.keepRunning = True;
+        
         import entityMgr
         self.entityMgr = entityMgr.EntityMgr(self)
         self.entityMgr.init()
-        self.keepRunning = True;
 
         import gfxMgr
         self.gfxMgr = gfxMgr.GfxMgr(self)
@@ -26,21 +27,21 @@ class Engine(object):
         self.inputMgr = inputMgr.InputMgr(self)
         self.inputMgr.init()
 
-        import selectionMgr
-        self.selectionMgr = selectionMgr.SelectionMgr(self)
-        self.selectionMgr.init()
+        #import selectionMgr
+        #self.selectionMgr = selectionMgr.SelectionMgr(self)
+        #self.selectionMgr.init()
 
         import gameMgr
         self.gameMgr = gameMgr.GameMgr(self)
-        self.gameMgr.init()
+        #self.gameMgr.init()
         
         import controlMgr
         self.controlMgr = controlMgr.ControlMgr(self)
-        self.controlMgr.init()
+        #self.controlMgr.init()
         
         import cameraMgr
         self.cameraMgr = cameraMgr.CameraMgr(self)
-        self.cameraMgr.init()
+        #self.cameraMgr.init()
         
         import overlayMgr
         self.overlayMgr = overlayMgr.OverlayMgr(self)
@@ -48,15 +49,28 @@ class Engine(object):
         
         import npcMgr
         self.npcMgr = npcMgr.NPCMgr(self)
-        self.npcMgr.init()
+        #self.npcMgr.init()
 
     def stop(self):
         self.gfxMgr.stop()
         self.inputMgr.stop()
-        self.selectionMgr.stop()
+        #self.selectionMgr.stop()
         self.gameMgr.stop()
         self.controlMgr.stop()
         self.keepRunning = False
+        
+    def startGame(self):
+        self.gameMgr.init()
+        self.controlMgr.init()
+        self.cameraMgr.init()
+        self.npcMgr.init()
+        self.paused = False
+        
+    def pause(self):
+        self.paused = True
+    
+    def resume(self):
+        self.paused = False
 
     def run(self):
         import time
@@ -72,16 +86,18 @@ class Engine(object):
             dtime = now - self.oldTime
             self.oldTime = now
 
-            self.entityMgr.tick(dtime)
-            self.gfxMgr.tick(dtime)
-            self.cameraMgr.tick(dtime)
-            self.netMgr.tick(dtime)
             self.inputMgr.tick(dtime)
-            self.selectionMgr.tick(dtime)
-            self.controlMgr.tick(dtime)
-            self.gameMgr.tick(dtime)
             self.overlayMgr.tick(dtime)
-            self.npcMgr.tick(dtime)
+            self.gfxMgr.tick(dtime)
+            
+            if not self.paused:
+                self.entityMgr.tick(dtime)
+                self.cameraMgr.tick(dtime)
+                self.netMgr.tick(dtime)
+                #self.selectionMgr.tick(dtime)
+                self.controlMgr.tick(dtime)
+                self.gameMgr.tick(dtime)
+                self.npcMgr.tick(dtime)
             
             self.runTime += dtime
 

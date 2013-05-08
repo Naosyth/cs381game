@@ -24,6 +24,9 @@ class Chase(Command):
         self.target = target
 
     def tick(self, dt):
+        if self.ent.health <= 0:
+            return
+            
         # Face the target ship
         dir = self.ent.pos-self.target.pos
         dir.normalise()
@@ -45,11 +48,20 @@ class Attack(Command):
         self.target = target
     
     def tick(self, dt):
-        self.desiredSpeed = 0
+        if self.ent.health <= 0:
+            return
+            
+        self.ent.desiredSpeed = 0
         self.ent.vel *= 0.5
         
+        # Estimate where the target will be
+        projectileSpeed = 200.0
+        dist = self.ent.pos.distance(self.target.pos)
+        timeToTarget = dist/projectileSpeed+0.2
+        targetPos = self.target.pos+(self.target.vel*timeToTarget)
+        
         # Face the target ship
-        dir = self.ent.pos-self.target.pos
+        dir = self.ent.pos-targetPos
         dir.normalise()
         right = Vector3(dir.z,0,-dir.x)
         right.normalise()

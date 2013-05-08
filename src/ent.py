@@ -114,7 +114,7 @@ class PlayerShip(GenericShip):
 
         # Movement
         self.acceleration = 20.0
-        self.turningRate  = 3.14/1.5
+        self.turningRate  = 3.14/3.0
         self.maxSpeed = 250.0
         self.desiredSpeed = 0.0
         self.yawRate = 0.0
@@ -129,14 +129,14 @@ class PlayerShip(GenericShip):
         
         # Other ship related data
         self.isTargeted = False
-        self.health = 2000.0
-        self.maxHealth = 2000.0
+        self.health = 500.0
+        self.maxHealth = 500.0
         self.energy = 100.0
         self.maxEnergy = 100.0
         self.fireRate = 0.5
         self.fireTimer = 0.0
         self.canFire = True
-        self.collideRadius = 500
+        self.collideRadius = 50
         self.score = 0
 
 class EnemyFighter(GenericShip):
@@ -173,7 +173,7 @@ class EnemyFighter(GenericShip):
         self.fireTimer = 0.0
         self.canFire = True
         self.attackRange = 1000
-        self.collideRadius = 20
+        self.collideRadius = 40
         self.killPoints = 50
         self.respawnTime = 20.0
         self.respawnTimer = 0.0
@@ -188,9 +188,9 @@ class EscortShip(GenericShip):
         self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
 
         # Movement
-        self.acceleration = 20.0
-        self.turningRate  = 20.0
-        self.maxSpeed = 200.0
+        self.acceleration = 10.0
+        self.turningRate  = 10.0
+        self.maxSpeed = 50.0
         self.desiredSpeed = 0.0
         self.yawRate = 0.0
         self.pitchRate = 0.0
@@ -204,15 +204,17 @@ class EscortShip(GenericShip):
         
         # Other ship related data
         self.isTargeted = False
-        self.health = 5000.0
-        self.maxHealth = 5000.0
+        self.health = 4000.0
+        self.maxHealth = 4000.0
         self.energy = 100.0
         self.maxEnergy = 100.0
         self.fireRate = 10.0
         self.fireTimer = 0.0
         self.canFire = True
-        self.collideRadius = 50
+        self.collideRadius = 75
         self.killPoints = -1000
+        self.respawnTime = 9999999999.0
+        self.respawnTimer = 0.0
         
 class GenericProjectile(Entity):
     aspectTypes = [ProjectilePhysics, Collision, ProjectileRenderer]
@@ -270,7 +272,7 @@ class RailgunProjectile(GenericProjectile):
         # Other projectile related data
         self.collideRadius = 2
         self.damage = 60
-        self.lifeTime = 5.0
+        self.lifeTime = 15.0
         self.timeTimer = 0.0
         self.isActive = False
         self.oriented = False
@@ -287,14 +289,14 @@ class EnemyProjectile(GenericProjectile):
         self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
 
         # Movement
-        self.speed = 200.0
+        self.speed = 300.0 # IMPORTANT: Update this value in command.py if you change it!
         
         self.scale = Vector3(0.01,0.01,0.01)
 
         # Other projectile related data
         self.collideRadius = 2
-        self.damage = 15
-        self.lifeTime = 5.0
+        self.damage = 20
+        self.lifeTime = 15.0
         self.timeTimer = 0.0
         self.isActive = False
         self.oriented = False

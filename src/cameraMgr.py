@@ -25,6 +25,9 @@ class CameraMgr:
         pass
         
     def tick(self, dtime):
+        if self.playerObject == None:
+            self.playerObject = self.engine.entityMgr.playerObject
+            
         self.screenWidth = self.engine.gfxMgr.viewPort.getActualWidth()
         self.screenHeight = self.engine.gfxMgr.viewPort.getActualHeight()
         

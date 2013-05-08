@@ -39,11 +39,12 @@ class EntityMgr:
         
     def getNextProjectile(self, projType):
         for eid, proj in self.projectiles.iteritems():
-            if not proj.isActive:
+            if not proj.isActive and proj.projType == projType:
                 return proj
         return self.projectiles[0]
 
     def tick(self, dt):
+        if self.engine.overlayMgr.currentOverlay == "Game":
         for eid, ent in self.ents.iteritems():
             ent.tick(dt)
         for eid, proj in self.projectiles.iteritems():

@@ -88,3 +88,75 @@ material GUI_Grey_Background
 		}
 	}
 }
+
+material Splash_Logo
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_Splash.png
+			}
+		}
+	}
+}
+
+material Credits_Win
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_Win.png
+			}
+		}
+	}
+}
+
+material Credits_Lose
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_Lose.png
+			}
+		}
+	}
+}
+
+material Game_Help
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_Help.png
+			}
+		}
+	}
+}

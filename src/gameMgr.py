@@ -11,7 +11,10 @@ class GameMgr:
         print "starting Game mgr"
 
     def init(self):
-        self.loadLevel()
+        #self.loadLevel()
+        self.totalTime = 0.0
+        self.gameBottomText = ""
+        self.won = False
 
     # Load the player ship.
     def loadPlayer(self):
@@ -38,7 +41,19 @@ class GameMgr:
             ent = self.engine.entityMgr.createProjectile(self.engine.entityMgr.projectileTypes[1])
 
     def tick(self, dt):
-        pass
+        self.totalTime += dt
+        if self.totalTime < 5:
+            self.gameBottomText = "Use W and S to speed up or slow down"
+        elif self.totalTime < 10:
+            self.gameBottomText = "Turn with the mouse"
+        elif self.totalTime < 15:
+            self.gameBottomText = "Fire with left click"
+        elif self.totalTime < 20:
+            self.gameBottomText = "Protect the cargo ship from enemy fighters"
+        elif self.totalTime < 25:
+            self.gameBottomText = "Its health is displayed at the top of the screen in green"
+        elif self.totalTime < 30:
+            self.gameBottomText = "NaoSpace by Brandon Worl and Oliver Yancey"
 
     def stop(self):
         pass

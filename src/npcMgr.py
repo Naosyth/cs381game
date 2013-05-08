@@ -23,5 +23,18 @@ class NPCMgr:
                 self.escortPathStep += 1
         
     def tick(self, dtime):
+        # Game end cases
+        if self.engine.entityMgr.escortShip.health <= 0:
+            self.engine.pause()
+            self.engine.overlayMgr.setOverlay("Credits")
+            self.engine.gameMgr.won = False
+        elif self.engine.entityMgr.playerObject.health <= 0:
+            self.engine.pause()
+            self.engine.overlayMgr.setOverlay("Credits")
+            self.engine.gameMgr.won = False
+        elif self.escortShip.command == None and self.escortPathStep >= self.escortPathSize:
+            self.engine.pause()
+            self.engine.overlayMgr.setOverlay("Credits")
+            self.engine.gameMgr.won = True
         self.updateEscortShip()
 

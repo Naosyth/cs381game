@@ -24,6 +24,12 @@ class ControlMgr:
         pass
         
     def tick(self, dtime):
+        if not self.engine.overlayMgr.currentOverlay == "Game":
+            return
+    
+        if self.playerObject == None:
+            self.playerObject = self.engine.entityMgr.playerObject
+    
         self.screenWidth = self.engine.gfxMgr.viewPort.getActualWidth()
         self.screenHeight = self.engine.gfxMgr.viewPort.getActualHeight()
         
@@ -31,8 +37,8 @@ class ControlMgr:
         deltaX = self.ms.X.abs
         deltaY = self.ms.Y.abs
         
-        if not self.playerObject == None and not self.keyboard.isKeyDown(OIS.KC_LSHIFT):
-            if (utils.distSquared2D(self.ms.X.abs, self.ms.Y.abs, self.screenWidth/2, self.screenHeight/2) > 1000):
+        if not self.playerObject == None and not self.keyboard.isKeyDown(OIS.KC_LCONTROL):
+            if (utils.distSquared2D(self.ms.X.abs, self.ms.Y.abs, self.screenWidth/2, self.screenHeight/2) > 350):
                 self.playerObject.yawRate = -1*float(self.ms.X.abs) / (self.screenWidth/2) + 1
                 self.playerObject.pitchRate = -1*float(self.ms.Y.abs) / (self.screenHeight/2) + 1
             else:

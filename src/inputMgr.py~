@@ -13,7 +13,7 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         OIS.KeyListener.__init__(self)
         OIS.MouseListener.__init__(self)
         OIS.JoyStickListener.__init__(self)
-        self.toggle = 0.1
+        self.toggle = 0.0
 
     def init(self):
         windowHandle = 0
@@ -66,6 +66,7 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         self.inputManager = None
         
     def tick(self, dtime):
+        self.toggle -= dtime
         self.keyboard.capture()
         self.mouse.capture()
 
@@ -79,6 +80,19 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
     def keyPressed(self, evt):
         if self.keyboard.isKeyDown(OIS.KC_ESCAPE):
             self.engine.stop()
+            
+        if self.engine.overlayMgr.currentOverlay == "Splash":
+            # Start game on enter or space
+            if self.keyboard.isKeyDown(OIS.KC_SPACE) or self.keyboard.isKeyDown(OIS.KC_RETURN):
+                self.engine.gameMgr.loadLevel();
+                self.engine.overlayMgr.setOverlay("Game")
+                self.engine.startGame()
+        elif self.engine.overlayMgr.currentOverlay == "Game":
+            # Toggle in game help
+            if self.toggle <= 0 and self.keyboard.isKeyDown(OIS.KC_F1):
+                self.toggle = 0.25
+                self.engine.overlayMgr.getOverlayByName("Game").showHelp = not self.engine.overlayMgr.getOverlayByName("Game").showHelp
+                self.engine.paused = self.engine.overlayMgr.getOverlayByName("Game").showHelp
         return True
 
     def keyReleased(self, evt):
@@ -89,13 +103,16 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         return True
 
     def mousePressed(self, evt, id):
-        playerObject = self.engine.entityMgr.playerObject
-        if id == OIS.MB_Left and playerObject.canFire:
-            bullet = self.engine.entityMgr.getNextProjectile("railgunBullet")
-            bullet.fire(playerObject)
-            playerObject.canFire = False
-        if id == OIS.MB_Right:
-            pass # Future plans?
+        if self.engine.overlayMgr.currentOverlay == "Splash":
+            pass
+        elif self.engine.overlayMgr.currentOverlay == "Game":
+            playerObject = self.engine.entityMgr.playerObject
+            if id == OIS.MB_Left and playerObject.canFire:
+                bullet = self.engine.entityMgr.getNextProjectile("railgunBullet")
+                bullet.fire(playerObject)
+                playerObject.canFire = False
+            if id == OIS.MB_Right:
+                pass # Future plans?
         return True
 
     def mouseReleased(self, evt, id):
