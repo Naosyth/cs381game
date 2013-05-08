@@ -59,4 +59,17 @@ class ProjectileRenderer:
             self.node.setVisible(False)
         else:
             self.node.setVisible(True)
+            
+class ObstacleRenderer:
+    def __init__(self, ent):
+        self.ent = ent
+
+        self.gent =  self.ent.engine.gfxMgr.sceneManager.createEntity(self.ent.uiname + "_ogreEnt", self.ent.mesh)
+        self.node =  self.ent.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.ent.uiname + 'node', ent.pos)
+        self.node.attachObject(self.gent)
+        self.node.scale(self.ent.scale)
+        
+    def tick(self, dtime):
+        self.node.setPosition(self.ent.pos)
+        self.node.setOrientation(self.ent.orientation)
 

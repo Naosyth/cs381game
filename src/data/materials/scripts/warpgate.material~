@@ -1,0 +1,184 @@
+
+material _missing_material_
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            ambient 0.1 0.1 0.1 1.0
+            diffuse 0.8 0.0 0.0 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.3 0.3 0.3 1.0
+        }
+    }
+}
+
+// WarpGate_Base genrated by blender2ogre 0.5.9
+
+material WarpGate_Base 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass WarpGate_Base
+        {
+            ambient 0.06071945279836655 0.06071945279836655 0.06071945279836655 1.0
+            diffuse 0.04857556296252552 0.04857556296252552 0.04857556296252552 1.0
+            specular 0.04771222144353349 0.04771222144353349 0.04771222144353349 1.0 73.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture metal2.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex add_signed src_texture src_current
+            }
+        }
+    }
+}
+// WarpGate_OuterRing genrated by blender2ogre 0.5.9
+
+material WarpGate_OuterRing 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass WarpGate_OuterRing
+        {
+            ambient 0.5173338055610657 0.0 0.00594488438218832 1.0
+            diffuse 0.4138670506159521 0.0 0.0047559075766192005 1.0
+            specular 0.2384950965642929 0.0 0.003399938577786088 1.0 46.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture metal2.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex add_signed src_texture src_current
+            }
+        }
+    }
+}
+// WarpGate_Brace genrated by blender2ogre 0.5.9
+
+material WarpGate_Brace 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass WarpGate_Brace
+        {
+            ambient 0.3588404655456543 0.3588404655456543 0.3588404655456543 1.0
+            diffuse 0.28707237671423513 0.28707237671423513 0.28707237671423513 1.0
+            specular 0.18361908197402954 0.18361908197402954 0.18361908197402954 1.0 60.75
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture metal2.jpg
+                tex_address_mode wrap
+                scale 0.2 0.2
+                colour_op_ex add_signed src_texture src_current
+            }
+        }
+    }
+}
+// WarpGate_Solar genrated by blender2ogre 0.5.9
+
+material WarpGate_Solar 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass WarpGate_Solar
+        {
+            ambient 0.24613939225673676 0.04199090227484703 0.800000011920929 1.0
+            diffuse 0.1969115167395996 0.03359272232044819 0.6400000190734865 1.0
+            specular 0.12182009220123291 0.5599061250686646 1.0 1.0 13.0
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture solar.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op modulate
+            }
+        }
+    }
+}

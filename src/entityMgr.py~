@@ -13,10 +13,14 @@ class EntityMgr:
         self.nEnts = 0
         self.projectiles = {}
         self.nProjectiles = 0
+        self.obstacles = {}
+        self.nObstacles = 0
         import ent
         self.playerType = ent.PlayerShip
         self.escortType = ent.EscortShip
-        self.enemyTypes = [ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter]
+        self.warpGateType = ent.WarpGate
+        self.ateroidType = ent.Asteroid
+        self.enemyTypes = [ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter]
         self.projectileTypes = [ent.RailgunProjectile, ent.EnemyProjectile]
         
         self.playerObject = None
@@ -37,6 +41,13 @@ class EntityMgr:
         self.nProjectiles += 1
         return ent
         
+    def createObstacle(self, entType, pos = Vector3(0,0,0)):
+        ent = entType(self.engine, self.nObstacles, pos = pos)
+        ent.init()
+        self.obstacles[self.nObstacles] = ent;
+        self.nObstacles += 1
+        return ent
+        
     def getNextProjectile(self, projType):
         for eid, proj in self.projectiles.iteritems():
             if not proj.isActive and proj.projType == projType:
@@ -44,7 +55,6 @@ class EntityMgr:
         return self.projectiles[0]
 
     def tick(self, dt):
-        if self.engine.overlayMgr.currentOverlay == "Game":
         for eid, ent in self.ents.iteritems():
             ent.tick(dt)
         for eid, proj in self.projectiles.iteritems():

@@ -12,6 +12,7 @@ from physics       import ShipPhysics
 from physics       import ProjectilePhysics
 from render        import ShipRenderer
 from render        import ProjectileRenderer
+from render        import ObstacleRenderer
 from unitAI        import UnitAI
 from collision     import Collision
 
@@ -102,7 +103,7 @@ class GenericShip(Entity):
                 self.health = self.maxHealth
                 self.pos = self.engine.entityMgr.escortShip.pos + ogre.Vector3(random.randint(-600, 600), random.randint(-600, 600), random.randint(-600, 600))
                 self.command = command.Chase(self, random.choice([self.engine.entityMgr.playerObject, self.engine.entityMgr.escortShip]))
-#-----------------------------------------------------------------------------------------
+
 class PlayerShip(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
         GenericShip.__init__(self, engine, id, pos, orientation, vel)
@@ -190,13 +191,13 @@ class EscortShip(GenericShip):
         # Movement
         self.acceleration = 10.0
         self.turningRate  = 10.0
-        self.maxSpeed = 50.0
+        self.maxSpeed = 20.0
         self.desiredSpeed = 0.0
         self.yawRate = 0.0
         self.pitchRate = 0.0
         self.speed = 0.0
         
-        self.scale = Vector3(30,30,30)
+        self.scale = Vector3(25,25,25)
         
         # Control
         self.isPlayerControlled = False
@@ -204,8 +205,8 @@ class EscortShip(GenericShip):
         
         # Other ship related data
         self.isTargeted = False
-        self.health = 4000.0
-        self.maxHealth = 4000.0
+        self.health = 2500.0
+        self.maxHealth = 2500.0
         self.energy = 100.0
         self.maxEnergy = 100.0
         self.fireRate = 10.0
@@ -215,7 +216,7 @@ class EscortShip(GenericShip):
         self.killPoints = -1000
         self.respawnTime = 9999999999.0
         self.respawnTimer = 0.0
-        
+#-----------------------------------------------------------------------------------------
 class GenericProjectile(Entity):
     aspectTypes = [ProjectilePhysics, Collision, ProjectileRenderer]
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
@@ -301,3 +302,28 @@ class EnemyProjectile(GenericProjectile):
         self.isActive = False
         self.oriented = False
         self.source = None
+#-----------------------------------------------------------------------------------------
+class GenericObstacle(Entity):
+    aspectTypes = [ObstacleRenderer]
+    
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        Entity.__init__(self, engine, id, pos, orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0))
+        self.uiname = 'generic_obstacle' + str(id)        
+        self.scale = Vector3(1,1,1)
+
+class WarpGate(GenericObstacle):
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        GenericObstacle.__init__(self, engine, id, pos, orientation, vel)
+        
+        self.mesh = "WarpGate.mesh"
+        self.scale = Vector3(13,13,13)
+        
+class Asteroid(GenericObstacle):
+    def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
+        GenericObstacle.__init__(self, engine, id, pos, orientation, vel)
+        
+        self.orientation = Quaternion(random.randrange(-3, 3), random.randrange(0, 6), random.randrange(0, 6), random.randrange(0, 6))
+        
+        self.mesh = "Asteroid.mesh"
+        self.scale = Vector3(30,30,30)
+        

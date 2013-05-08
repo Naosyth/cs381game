@@ -22,14 +22,24 @@ class Chase(Command):
     def __init__(self, ent, target):
         self.ent = ent
         self.target = target
+        
+        self.chaseTime = 0.0
+        self.moveAway = True
+        #self.randPreference = random.randint(0, 1)
 
     def tick(self, dt):
         if self.ent.health <= 0:
             return
             
+        self.chaseTime += dt
+        if self.chaseTime > 5.0:
+            self.moveAway = False
+            
         # Face the target ship
         dir = self.ent.pos-self.target.pos
         dir.normalise()
+        if self.moveAway:
+            dir *= -1
         right = Vector3(dir.z,0,-dir.x)
         right.normalise()
         up = dir.crossProduct(right)
@@ -38,7 +48,7 @@ class Chase(Command):
         # Accelerate towards the target ship
         self.ent.desiredSpeed = self.ent.maxSpeed
         
-        if self.ent.pos.distance(self.target.pos) < self.ent.attackRange/2:
+        if self.ent.pos.distance(self.target.pos) < self.ent.attackRange and self.moveAway == False:
             self.ent.command = Attack(self.ent, self.target)
         
 # Applied when an enemy ship is close enough to a target. Orients the ship towards the target and shoots at it
@@ -46,9 +56,16 @@ class Attack(Command):
     def __init__(self, ent, target):
         self.ent = ent
         self.target = target
+        
+        self.attackTime = 0.0
     
     def tick(self, dt):
         if self.ent.health <= 0:
+            return
+            
+        self.attackTime += dt
+        if self.attackTime > 6.0:
+            self.ent.command = Chase(self.ent, self.target)
             return
             
         self.ent.desiredSpeed = 0

@@ -10,11 +10,12 @@ class NPCMgr:
         
     def init(self):
         self.escortShip = self.engine.entityMgr.escortShip
-        self.escortPath = [command.Move(self.escortShip, ogre.Vector3(100, 100, 100), False), 
-                           command.Move(self.escortShip, ogre.Vector3(-700, 1300, 800), False), 
-                           command.Move(self.escortShip, ogre.Vector3(0, -1500, 0), True)]
+        self.escortPath = [command.Move(self.escortShip, ogre.Vector3(2300, -1200, 900), False), 
+                           command.Move(self.escortShip, ogre.Vector3(0, 300, -500), False), 
+                           command.Move(self.escortShip, ogre.Vector3(-900, 300, -500), False), 
+                           command.Move(self.escortShip, ogre.Vector3(-1000, 300, -500), True)]
         self.escortPathStep = 0
-        self.escortPathSize = 3
+        self.escortPathSize = 4
         
     def updateEscortShip(self):
         if not self.escortShip == None:

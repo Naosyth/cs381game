@@ -1,0 +1,58 @@
+
+material _missing_material_
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            ambient 0.1 0.1 0.1 1.0
+            diffuse 0.8 0.0 0.0 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.3 0.3 0.3 1.0
+        }
+    }
+}
+
+// ateroid1_rock genrated by blender2ogre 0.5.9
+
+material ateroid1_rock 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass ateroid1_rock
+        {
+            ambient 0.02732277847826481 0.045186225324869156 0.019896285608410835 1.0
+            diffuse 0.021858223108324748 0.03614898079855711 0.015917028723910875 1.0
+            specular 0.013660451397299767 0.022593112662434578 0.010144288651645184 1.0 12.5
+            emissive 0.16 0.16 0.16 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture rock.jpg
+                tex_address_mode wrap
+                scale 19.99999970197678 19.99999970197678
+                colour_op modulate
+            }
+        }
+    }
+}

@@ -13,10 +13,14 @@ class EntityMgr:
         self.nEnts = 0
         self.projectiles = {}
         self.nProjectiles = 0
+        self.obstacles = {}
+        self.nObstacles = 0
         import ent
         self.playerType = ent.PlayerShip
         self.escortType = ent.EscortShip
-        self.enemyTypes = [ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter]
+        self.warpGateType = ent.WarpGate
+        self.asteroidType = ent.Asteroid
+        self.enemyTypes = [ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter, ent.EnemyFighter]
         self.projectileTypes = [ent.RailgunProjectile, ent.EnemyProjectile]
         
         self.playerObject = None
@@ -35,6 +39,13 @@ class EntityMgr:
         ent.init()
         self.projectiles[self.nProjectiles] = ent;
         self.nProjectiles += 1
+        return ent
+        
+    def createObstacle(self, entType, pos = Vector3(0,0,0)):
+        ent = entType(self.engine, self.nObstacles, pos = pos)
+        ent.init()
+        self.obstacles[self.nObstacles] = ent;
+        self.nObstacles += 1
         return ent
         
     def getNextProjectile(self, projType):

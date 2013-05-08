@@ -20,8 +20,8 @@ class Collision:
             if not ent == self.ent.source and ent.health > 0:
                 self.distance = self.ent.pos.squaredDistance(ent.pos)
                 if self.distance <= self.collideRadius*self.collideRadius + ent.collideRadius*ent.collideRadius:
-                    ent.health -= 60
+                    ent.health -= self.ent.damage
                     self.ent.isActive = False
                     
-                    if ent.health <= 0:
+                    if ent.health <= 0 and :
                         self.ent.engine.entityMgr.playerObject.score += ent.killPoints

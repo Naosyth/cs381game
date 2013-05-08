@@ -186,7 +186,7 @@ class GameOverlay(Overlay):
         help.setMaterialName("Game_Help")
         help.hide()
         
-        self.hide = hide
+        self.help = help
         self.overlay.add2D(help)
         # --------------------------------------------------
         
@@ -209,7 +209,7 @@ class GameOverlay(Overlay):
             self.escortHealthPanel.setBorderSize(0.003, 0.003+0.49544*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
             
             # Bottom text
-            self.bottomPanel.textArea.setCaption(self.engine.gameMgr.gameBottomText)
+            self.bottomPanel.textArea.setCaption(self.engine.entityMgr.playerObject.pos)
 
 class CreditsOverlay(Overlay):
     name = "Credits"

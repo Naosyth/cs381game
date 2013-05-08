@@ -23,5 +23,5 @@ class Collision:
                     ent.health -= self.ent.damage
                     self.ent.isActive = False
                     
-                    if ent.health <= 0:
+                    if ent.health <= 0 and self.ent.source == self.ent.engine.entityMgr.playerObject:
                         self.ent.engine.entityMgr.playerObject.score += ent.killPoints
