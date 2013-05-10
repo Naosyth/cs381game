@@ -89,6 +89,24 @@ material GUI_Grey_Background
 	}
 }
 
+material GUI_Red_Border
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0.8 0.1 0.1
+			}
+		}
+	}
+}
+
 material GUI_Reticle
 {
 	technique
@@ -156,6 +174,60 @@ material Splash_Logo
 			texture_unit
 			{
 				texture NaoSpace_Splash.png
+			}
+		}
+	}
+}
+
+material Splash_Start_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture start.png
+			}
+		}
+	}
+}
+
+material Splash_About_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture about.png
+			}
+		}
+	}
+}
+
+material Splash_About
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_About.png
 			}
 		}
 	}

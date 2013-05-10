@@ -14,6 +14,7 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         OIS.MouseListener.__init__(self)
         OIS.JoyStickListener.__init__(self)
         self.toggle = 0.0
+        self.onAboutPage = False
 
     def init(self):
         windowHandle = 0
@@ -83,7 +84,16 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
             
         if self.engine.overlayMgr.currentOverlay == "Splash":
             # Start game on enter or space
-            if self.keyboard.isKeyDown(OIS.KC_SPACE) or self.keyboard.isKeyDown(OIS.KC_RETURN):
+            if not self.onAboutPage and self.keyboard.isKeyDown(OIS.KC_UP) and self.toggle <= 0:
+                self.toggle = 0.25
+                self.engine.overlayMgr.selection = (self.engine.overlayMgr.selection-1)%2
+            elif not self.onAboutPage and self.keyboard.isKeyDown(OIS.KC_DOWN) and self.toggle <= 0:
+                
+                self.engine.overlayMgr.selection = (self.engine.overlayMgr.selection+1)%2
+            elif self.engine.overlayMgr.selection == 0 and self.keyboard.isKeyDown(OIS.KC_RETURN):
+                self.engine.overlayMgr.showAboutPage = not self.engine.overlayMgr.showAboutPage
+                self.onAboutPage = not self.onAboutPage
+            elif self.engine.overlayMgr.selection == 1 and self.keyboard.isKeyDown(OIS.KC_RETURN):
                 self.engine.gameMgr.loadLevel();
                 self.engine.overlayMgr.setOverlay("Game")
                 self.engine.startGame()
@@ -111,6 +121,7 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
                 bullet = self.engine.entityMgr.getNextProjectile("railgunBullet")
                 bullet.fire(playerObject)
                 playerObject.canFire = False
+                playerObject.energy -= playerObject.fireEnergyCost
             if id == OIS.MB_Right:
                 pass # Future plans?
         return True

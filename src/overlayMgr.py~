@@ -9,6 +9,9 @@ class OverlayMgr:
     def init(self):
         self.overlayManager = ogre.OverlayManager.getSingleton()
         
+        self.showAboutPage = False
+        self.selection = 0
+        
         self.overlayList = []
         self.loadOverlays()
         self.currentOverlay = ""
@@ -61,21 +64,74 @@ class SplashOverlay(Overlay):
         self.camera = self.engine.gfxMgr.sceneManager.createCamera(self.name+"_camera")
         self.engine.gfxMgr.viewPort.setCamera(self.camera)
         
-        # Static ship
-        
-        # Static asteroids
-        
         # ---------- Logo Graphic ----------------------------------------
         panel = self.overlayManager.createOverlayElement("Panel", self.name+"_Logo")
         panel.setPosition(0.1, 0.1)
         panel.setDimensions(0.8, 0.8)
         panel.setMaterialName("Splash_Logo")
         
+        self.logo = panel
+        
+        self.overlay.add2D(panel)
+        # --------------------------------------------------
+        
+        # ---------- About Button ----------------------------------------
+        panel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_About_Button")
+        panel.setPosition(0.45, 0.65)
+        panel.setDimensions(0.12, 0.08)
+        panel.setMaterialName("Splash_About_Button")
+        panel.setBorderMaterialName("GUI_Grey_Border")
+        panel.setBorderSize(0.003)
+        
+        self.aboutButton = panel
+        
+        self.overlay.add2D(panel)
+        # --------------------------------------------------
+        
+        # ---------- Start Button ----------------------------------------
+        panel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_Start_Button")
+        panel.setPosition(0.45, 0.5)
+        panel.setDimensions(0.12, 0.08)
+        panel.setMaterialName("Splash_Start_Button")
+        panel.setBorderMaterialName("GUI_Grey_Border")
+        panel.setBorderSize(0.003)
+        
+        self.playButton = panel
+        
+        self.overlay.add2D(panel)
+        # --------------------------------------------------
+        
+        # ---------- About Graphic ----------------------------------------
+        panel = self.overlayManager.createOverlayElement("Panel", self.name+"_About")
+        panel.setPosition(0.1, 0.1)
+        panel.setDimensions(0.8, 0.8)
+        panel.setMaterialName("Splash_About")
+        
+        self.about = panel
+        
         self.overlay.add2D(panel)
         # --------------------------------------------------
         
     def tick(self, dtime):
         self.camera.yaw(-3.14/60*dtime)
+        
+        if self.engine.overlayMgr.selection == 1:
+            self.playButton.setBorderMaterialName("GUI_Red_Border")
+            self.aboutButton.setBorderMaterialName("GUI_Grey_Border")
+        elif self.engine.overlayMgr.selection == 0:
+            self.playButton.setBorderMaterialName("GUI_Grey_Border")
+            self.aboutButton.setBorderMaterialName("GUI_Red_Border")
+        
+        if self.engine.overlayMgr.showAboutPage:
+            self.playButton.hide()
+            self.aboutButton.hide()
+            self.logo.hide()
+            self.about.show()
+        else:
+            self.playButton.show()
+            self.aboutButton.show()
+            self.logo.show()
+            self.about.hide()
         
 class GameOverlay(Overlay):
     name = "Game"
