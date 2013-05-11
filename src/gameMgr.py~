@@ -40,7 +40,7 @@ class GameMgr:
         self.engine.entityMgr.createObstacle(self.engine.entityMgr.asteroidType, Vector3(0, -800, -1300))
     
         for entType in self.engine.entityMgr.enemyTypes:
-            ent = self.engine.entityMgr.createEnt(entType, self.engine.entityMgr.escortShip.pos + ogre.Vector3(random.randint(-2400, 2400), random.randint(-2400, 2400), random.randint(-2400, 2400)))
+            ent = self.engine.entityMgr.createEnt(entType, self.engine.entityMgr.escortShip.pos + Vector3(random.randint(-2400, 2400), random.randint(-2400, 2400), random.randint(-2400, 2400)))
             ent.command = command.Chase(ent, random.choice([self.engine.entityMgr.playerObject, self.engine.entityMgr.escortShip]))
         
         # Spawn 30 inactive bullets

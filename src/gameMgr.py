@@ -58,12 +58,8 @@ class GameMgr:
         elif self.totalTime < 15:
             self.gameBottomText = "F1 will also pause the game"
         elif self.totalTime < 20:
-            self.gameBottomText = "Your cargo ship has come under attack"
-        elif self.totalTime < 25:
-            self.gameBottomText = "You must escort it to the warp gate so it can escape the area"
-        elif self.totalTime < 30:
             self.gameBottomText = "Good luck!"
-        elif self.totalTime < 35:
+        elif self.totalTime < 25:
             self.gameBottomText = ""
 
     def stop(self):

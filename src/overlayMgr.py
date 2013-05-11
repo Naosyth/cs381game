@@ -224,7 +224,7 @@ class GameOverlay(Overlay):
             self.escortHealthPanel.setBorderSize(0.003, 0.003+0.49544*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
             
             # Bottom text
-            self.bottomPanel.textArea.setCaption(str(self.engine.entityMgr.playerObject.pos))
+            self.bottomPanel.textArea.setCaption(self.engine.gameMgr.gameBottomText)
 
 class CreditsOverlay(Overlay):
     name = "Credits"

@@ -213,7 +213,7 @@ class GameOverlay(Overlay):
             self.help.hide()
         
         if not self.playerObject == None and not self.escortShip == None:
-            self.mousePanel.setPosition(self.engine.controlMgr.ms.X.abs-16, self.engine.controlMgr.ms.Y.abs-16)
+            self.mousePanel.setPosition(self.engine.controlMgr.ms.X.abs-8, self.engine.controlMgr.ms.Y.abs-8)
                
             # Ship and player info
             self.healthPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.health/self.playerObject.maxHealth)), 0.003, 0.003)
@@ -224,7 +224,7 @@ class GameOverlay(Overlay):
             self.escortHealthPanel.setBorderSize(0.003, 0.003+0.49544*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
             
             # Bottom text
-            self.bottomPanel.textArea.setCaption(str(self.engine.entityMgr.playerObject.pos))
+            self.bottomPanel.textArea.setCaption(str(self.engine.gameMgr.bottomText)
 
 class CreditsOverlay(Overlay):
     name = "Credits"
