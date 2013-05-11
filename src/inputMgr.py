@@ -24,8 +24,8 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
         if os.name == "nt":
             t = [("w32_mouse","DISCL_FOREGROUND"), ("w32_mouse", "DISCL_NONEXCLUSIVE")]
         else:
-            t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "false")]
-            #t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "true")]
+            #t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "false")]
+            t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "true")]
 
         paramList.extend(t)
 

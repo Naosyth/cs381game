@@ -18,10 +18,18 @@ class ShipRenderer:
         self.node.attachObject(self.gent)
         self.node.scale(self.ent.scale)
 
-        # Wake Particles
+        # Trail Particles
         self.trailNode = self.node.createChildSceneNode()
         self.trailParticle = self.ent.engine.gfxMgr.sceneManager.createParticleSystem(self.ent.uiname + "Trail_ogreEnt", 'Navitas/Trail')
         self.trailNode.attachObject(self.trailParticle)
+        
+        # Explosion Particles
+        self.explosionNode = self.node.createChildSceneNode()
+        self.explosionParticle = self.ent.engine.gfxMgr.sceneManager.createParticleSystem(self.ent.uiname + "Explosion_ogreEnt", 'NaoSpace/Explosion')
+        self.explosionNode.attachObject(self.explosionParticle)
+        self.explosionParticle.setEmitting(False)
+        
+        self.deathTimer = 0.0
         
         if self.ent.isPlayerControlled:
             self.dustNode = self.node.createChildSceneNode()
@@ -35,12 +43,20 @@ class ShipRenderer:
         # Bounding box is visible if the entity is targeted
         self.node.showBoundingBox(self.ent.isTargeted)
         # Trail Node is visible if the entity is moving
-        self.trailNode.setVisible(self.ent.speed > 0.05)
+        self.trailParticle.setEmitting(self.ent.speed > 0.05)
         
         if self.ent.health <= 0:
-            self.node.setVisible(False)
+            self.deathTimer += dtime
+            
+            self.gent.setVisible(False)
+            self.trailParticle.setEmitting(False)
+            self.explosionParticle.setEmitting(True)
+            if self.deathTimer > 2.0:
+                self.explosionParticle.setEmitting(False)
         else:
-            self.node.setVisible(True)
+            self.deathTimer = 0.0
+            self.explosionParticle.setEmitting(False)
+            self.gent.setVisible(True)
 
 class ProjectileRenderer:
     def __init__(self, ent):
@@ -72,9 +88,4 @@ class ObstacleRenderer:
     def tick(self, dtime):
         self.node.setPosition(self.ent.pos)
         self.node.setOrientation(self.ent.orientation)
-        
-        if not self.ent.isActive:
-            self.node.setVisible(False)
-        else:
-            self.node.setVisible(True)
 

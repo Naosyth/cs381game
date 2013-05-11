@@ -152,11 +152,14 @@ class GameOverlay(Overlay):
         # --------------------------------------------------
         
         # ---------- Crosshair ----------------------------------------
-        crosshairPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_CrosshairPanel")
-        crosshairPanel.setPosition(0.495, 0.53)
-        crosshairPanel.setDimensions(0.01, 0.01)
-        crosshairPanel.setBorderMaterialName("GUI_Objective_Bar")
-        crosshairPanel.setBorderSize(0.0015)
+        crosshairPanel = self.overlayManager.createOverlayElement("Panel", self.name+"_CrosshairPanel")
+        crosshairPanel.setMetricsMode(ogre.GMM_PIXELS)
+        crosshairPanel.setLeft(-20)
+        crosshairPanel.setTop(-12)
+        crosshairPanel.setHorizontalAlignment(ogre.GHA_CENTER)
+        crosshairPanel.setVerticalAlignment(ogre.GVA_CENTER)
+        crosshairPanel.setDimensions(40, 40)
+        crosshairPanel.setMaterialName("GUI_Reticle")
         
         self.crosshairPanel = crosshairPanel
         self.overlay.add2D(crosshairPanel)
@@ -190,6 +193,16 @@ class GameOverlay(Overlay):
         self.overlay.add2D(help)
         # --------------------------------------------------
         
+        # ---------- Mouse ----------------------------------------
+        mousePanel = self.overlayManager.createOverlayElement("Panel", self.name+"_MousePanel")
+        mousePanel.setMetricsMode(ogre.GMM_PIXELS)
+        mousePanel.setDimensions(32, 32)
+        mousePanel.setMaterialName("GUI_Mouse")
+        
+        self.mousePanel = mousePanel
+        self.overlay.add2D(mousePanel)
+        # --------------------------------------------------
+        
     def tick(self, dtime):
         self.playerObject = self.engine.entityMgr.playerObject
         self.escortShip = self.engine.entityMgr.escortShip
@@ -200,6 +213,8 @@ class GameOverlay(Overlay):
             self.help.hide()
         
         if not self.playerObject == None and not self.escortShip == None:
+            self.mousePanel.setPosition(self.engine.controlMgr.ms.X.abs-8, self.engine.controlMgr.ms.Y.abs-8)
+               
             # Ship and player info
             self.healthPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.health/self.playerObject.maxHealth)), 0.003, 0.003)
             self.energyPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.energy/self.playerObject.maxEnergy)), 0.003, 0.003)

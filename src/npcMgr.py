@@ -13,7 +13,7 @@ class NPCMgr:
         self.escortPath = [command.Move(self.escortShip, ogre.Vector3(2300, -1200, 900), False), 
                            command.Move(self.escortShip, ogre.Vector3(0, 300, -500), False), 
                            command.Move(self.escortShip, ogre.Vector3(-900, 300, -500), False), 
-                           command.Move(self.escortShip, ogre.Vector3(-1000, 300, -500), True)]
+                           command.Move(self.escortShip, ogre.Vector3(-1000, 300, -500), False)]
         self.escortPathStep = 0
         self.escortPathSize = 4
         

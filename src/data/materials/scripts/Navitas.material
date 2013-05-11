@@ -1,4 +1,3 @@
-
 material _missing_material_
 {
     receive_shadows off
@@ -98,6 +97,7 @@ material Navitas_White
         }
     }
 }
+
 // Navitas_Red genrated by blender2ogre 0.5.9
 
 material Navitas_Red 
@@ -129,7 +129,7 @@ material Navitas_Red
             scene_blend_op add
             shading gouraud
             transparent_sorting on
-
+           
             texture_unit 
             {
                 texture metal2.jpg

@@ -89,6 +89,42 @@ material GUI_Grey_Background
 	}
 }
 
+material GUI_Reticle
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture reticle.png
+			}
+		}
+	}
+}
+
+material GUI_Mouse
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture mouse.png
+			}
+		}
+	}
+}
+
 material Splash_Logo
 {
 	technique

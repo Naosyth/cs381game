@@ -1,0 +1,45 @@
+particle_system NaoSpace/Explosion
+{
+    material        Examples/Flare
+    particle_width  40
+    particle_height 40
+    cull_each       true
+    quota           400
+    billboard_type  point
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+
+    // Area emitter
+    emitter Cylinder
+    {
+        angle           30
+        emission_rate   6
+        time_to_live    3
+        position        0 0 0
+        direction       0 1 0
+        velocity_min  	-50
+        velocity_max  	50
+        colour_range_start  1 1 0.5
+        colour_range_end    1 0.8 0.3
+        width           15
+        height          15
+        depth           15
+    }
+
+	affector ColourFader
+	{
+		red -0.25
+		green -1
+		blue -1
+	}
+
+    // Rotater
+    affector Rotator
+    {
+        rotation_range_start 0
+        rotation_range_end 360
+        rotation_speed_range_start 0
+        rotation_speed_range_end 180
+    }
+}
+

@@ -1,4 +1,3 @@
-
 material _missing_material_
 {
     receive_shadows off
@@ -98,6 +97,13 @@ material Navitas_White
         }
     }
 }
+
+fragment_program shader/test cg
+{
+    source HeatVision.cg
+    profiles vs_1_1
+}
+
 // Navitas_Red genrated by blender2ogre 0.5.9
 
 material Navitas_Red 
@@ -108,7 +114,7 @@ material Navitas_Red
     {
         pass Navitas_Red
         {
-            ambient 0.49692195653915405 0.0 0.0 1.0
+            ambient 0.39692195653915405 0.0 0.0 1.0
             diffuse 0.3975375711550946 0.0 0.0 1.0
             specular 0.09797903895378113 0.003910094131526876 0.005157659533168157 1.0 77.5
             emissive 0.0 0.0 0.0 1.0
@@ -129,6 +135,10 @@ material Navitas_Red
             scene_blend_op add
             shading gouraud
             transparent_sorting on
+
+            fragment_program_ref shader/test
+            {
+            }
 
             texture_unit 
             {
