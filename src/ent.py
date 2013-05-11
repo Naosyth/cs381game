@@ -6,6 +6,7 @@ Quaternion = ogre.Quaternion
 
 import random
 import command
+import utils
 
 from vector        import Vector3
 from physics       import ShipPhysics
@@ -134,11 +135,22 @@ class PlayerShip(GenericShip):
         self.maxHealth = 500.0
         self.energy = 100.0
         self.maxEnergy = 100.0
+        self.energyRechargeRate = 3.5
+        self.fireEnergyCost = 10.0
         self.fireRate = 0.5
         self.fireTimer = 0.0
         self.canFire = True
         self.collideRadius = 50
         self.score = 0
+        
+    def tick(self, dtime):
+        GenericShip.tick(self, dtime)
+        self.energy = utils.clamp(self.energy + self.energyRechargeRate*dtime, 0, self.maxEnergy)
+        
+        if self.energy < self.fireEnergyCost:
+            self.canFire = False
+        else:
+            self.canFire = True
 
 class EnemyFighter(GenericShip):
     def __init__(self, engine, id, pos = Vector3(0,0,0), orientation = Quaternion(0,0,0,1), vel = Vector3(0,0,0)):
@@ -205,8 +217,8 @@ class EscortShip(GenericShip):
         
         # Other ship related data
         self.isTargeted = False
-        self.health = 2500.0
-        self.maxHealth = 2500.0
+        self.health = 2000.0
+        self.maxHealth = 2000.0
         self.energy = 100.0
         self.maxEnergy = 100.0
         self.fireRate = 10.0

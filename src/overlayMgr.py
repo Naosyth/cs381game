@@ -234,12 +234,12 @@ class GameOverlay(Overlay):
             self.mousePanel.setPosition(self.engine.controlMgr.ms.X.abs-8, self.engine.controlMgr.ms.Y.abs-8)
                
             # Ship and player info
-            self.healthPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.health/self.playerObject.maxHealth)), 0.003, 0.003)
-            self.energyPanel.setBorderSize(0.003, 0.003+0.144*(1-(self.playerObject.energy/self.playerObject.maxEnergy)), 0.003, 0.003)
+            self.healthPanel.setBorderSize(0.003, 0.003+0.204*(1-(self.playerObject.health/self.playerObject.maxHealth)), 0.003, 0.003)
+            self.energyPanel.setBorderSize(0.003, 0.003+0.204*(1-(self.playerObject.energy/self.playerObject.maxEnergy)), 0.003, 0.003)
             self.scorePanel.textArea.setCaption("Score: " + str(self.playerObject.score))
             
             # Escort ship's health
-            self.escortHealthPanel.setBorderSize(0.003, 0.003+0.49544*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
+            self.escortHealthPanel.setBorderSize(0.003, 0.003+0.294*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
             
             # Bottom text
             self.bottomPanel.textArea.setCaption(self.engine.gameMgr.gameBottomText)

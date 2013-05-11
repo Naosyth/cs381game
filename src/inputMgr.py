@@ -111,6 +111,7 @@ class InputMgr(OIS.KeyListener, OIS.MouseListener, OIS.JoyStickListener):
                 bullet = self.engine.entityMgr.getNextProjectile("railgunBullet")
                 bullet.fire(playerObject)
                 playerObject.canFire = False
+                playerObject.energy -= playerObject.fireEnergyCost
             if id == OIS.MB_Right:
                 pass # Future plans?
         return True
