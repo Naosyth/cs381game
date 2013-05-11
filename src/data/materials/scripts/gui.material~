@@ -2,6 +2,7 @@ material GUI_Health_Bar
 {
 	technique
 	{
+	    rotation 12 0 0 1
 		pass
 		{
 			lighting off
@@ -119,7 +120,25 @@ material GUI_Mouse
 
 			texture_unit
 			{
-				texture reticle.png
+				texture mouse.png
+			}
+		}
+	}
+}
+
+material GUI_Background
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_GUI.png
 			}
 		}
 	}

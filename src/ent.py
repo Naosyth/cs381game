@@ -114,7 +114,7 @@ class PlayerShip(GenericShip):
         self.orientation.FromAngleAxis(0, Vector3(0, 0, 1))
 
         # Movement
-        self.acceleration = 20.0
+        self.acceleration = 10.0
         self.turningRate  = 3.14/3.0
         self.maxSpeed = 250.0
         self.desiredSpeed = 0.0

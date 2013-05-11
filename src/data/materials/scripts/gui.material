@@ -125,6 +125,24 @@ material GUI_Mouse
 	}
 }
 
+material GUI_Background
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture NaoSpace_GUI.png
+			}
+		}
+	}
+}
+
 material Splash_Logo
 {
 	technique

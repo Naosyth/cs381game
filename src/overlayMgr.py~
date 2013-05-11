@@ -88,20 +88,19 @@ class GameOverlay(Overlay):
         
     def loadOverlay(self):
         # ---------- GUI Background ----------------------------------------
-        guiPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_GUIPanel")
-        guiPanel.setPosition(0.835, 0.005)
-        guiPanel.setDimensions(0.16, 0.12)
-        guiPanel.setMaterialName("GUI_Grey_Background")
-        guiPanel.setBorderMaterialName("GUI_Grey_Border")
-        guiPanel.setBorderSize(0.003)
+        background = self.overlayManager.createOverlayElement("Panel", self.name+"_Background")
+        background.setPosition(0.0, 0.0)
+        background.setDimensions(1.0, 1.0)
+        background.setMaterialName("GUI_Background")
         
-        self.overlay.add2D(guiPanel)
+        self.background = background
+        self.overlay.add2D(background)
         # --------------------------------------------------
     
         # ---------- Health Bar ----------------------------------------
         healthPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_HealthPanel")
-        healthPanel.setPosition(0.84, 0.01)
-        healthPanel.setDimensions(0.15, 0.02)
+        healthPanel.setPosition(0.77, 0.015)
+        healthPanel.setDimensions(0.21, 0.04)
         healthPanel.setMaterialName("GUI_Health_Bar")
         healthPanel.setBorderMaterialName("GUI_Grey_Border")
         healthPanel.setBorderSize(0.003)
@@ -112,8 +111,8 @@ class GameOverlay(Overlay):
         
         # ---------- Energy Bar ----------------------------------------
         energyPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_EnergyPanel")
-        energyPanel.setPosition(0.84, 0.04)
-        energyPanel.setDimensions(0.15, 0.02)
+        energyPanel.setPosition(0.02, 0.015)
+        energyPanel.setDimensions(0.21, 0.04)
         energyPanel.setMaterialName("GUI_Energy_Bar")
         energyPanel.setBorderMaterialName("GUI_Grey_Border")
         energyPanel.setBorderSize(0.003)
@@ -124,7 +123,7 @@ class GameOverlay(Overlay):
         
         # ---------- Score Text ----------------------------------------
         scorePanel = self.overlayManager.createOverlayElement("Panel", self.name+"_ScorePanel")
-        scorePanel.setPosition(0.845, 0.08)
+        scorePanel.setPosition(0.45, 0.02)
         scorePanel.setDimensions(0.15, 0.04)
         
         scoreText = self.overlayManager.createOverlayElement("TextArea", self.name+"_ScoreText")
@@ -134,21 +133,38 @@ class GameOverlay(Overlay):
         scoreText.setColour(ogre.ColourValue(1, 1, 1))
         scorePanel.addChild(scoreText)
         
-        self.scorePanel = scoreText
+        self.scorePanel = scorePanel
         self.scorePanel.textArea = scoreText
         self.overlay.add2D(scorePanel)
         # --------------------------------------------------
         
         # ---------- Escort Ship Health Bar ----------------------------------------
         escortHealthPanel = self.overlayManager.createOverlayElement("BorderPanel", self.name+"_EscortHealthPanel")
-        escortHealthPanel.setPosition(0.25, 0.03)
-        escortHealthPanel.setDimensions(0.50, 0.03)
+        escortHealthPanel.setPosition(0.35, 0.07)
+        escortHealthPanel.setDimensions(0.30, 0.03)
         escortHealthPanel.setMaterialName("GUI_Objective_Bar")
         escortHealthPanel.setBorderMaterialName("GUI_Grey_Border")
         escortHealthPanel.setBorderSize(0.003)
         
         self.escortHealthPanel = escortHealthPanel
         self.overlay.add2D(escortHealthPanel)
+        # --------------------------------------------------
+        
+        # ---------- Speed Text ----------------------------------------
+        speedPanel = self.overlayManager.createOverlayElement("Panel", self.name+"_SpeedPanel")
+        speedPanel.setPosition(0.04, 0.94)
+        speedPanel.setDimensions(0.15, 0.04)
+        
+        speedText = self.overlayManager.createOverlayElement("TextArea", self.name+"_SpeedText")
+        speedText.setMetricsMode(ogre.GMM_PIXELS)
+        speedText.setFontName("BlueHighway")
+        speedText.setCharHeight(20)
+        speedText.setColour(ogre.ColourValue(1, 1, 1))
+        speedPanel.addChild(speedText)
+        
+        self.speedPanel = speedPanel
+        self.speedPanel.textArea = speedText
+        self.overlay.add2D(speedPanel)
         # --------------------------------------------------
         
         # ---------- Crosshair ----------------------------------------
@@ -167,14 +183,15 @@ class GameOverlay(Overlay):
         
         # ---------- Bottom Text ----------------------------------------
         bottomPanel = self.overlayManager.createOverlayElement("Panel", self.name+"_BottomPanel")
-        bottomPanel.setPosition(0.25, 0.90)
-        bottomPanel.setDimensions(0.50, 0.06)
+        bottomPanel.setPosition(0.50, 0.94)
+        bottomPanel.setDimensions(0.40, 0.06)
         
         bottomText = self.overlayManager.createOverlayElement("TextArea", self.name+"_BottomText")
         bottomText.setMetricsMode(ogre.GMM_PIXELS)
         bottomText.setFontName("BlueHighway")
         bottomText.setCharHeight(30)
         bottomText.setColour(ogre.ColourValue(1, 1, 1))
+        bottomText.setAlignment(ogre.TextAreaOverlayElement.Alignment.Center)
         bottomPanel.addChild(bottomText)
         
         self.bottomPanel = bottomText
@@ -213,6 +230,7 @@ class GameOverlay(Overlay):
             self.help.hide()
         
         if not self.playerObject == None and not self.escortShip == None:
+            # Cursor
             self.mousePanel.setPosition(self.engine.controlMgr.ms.X.abs-8, self.engine.controlMgr.ms.Y.abs-8)
                
             # Ship and player info
@@ -224,7 +242,10 @@ class GameOverlay(Overlay):
             self.escortHealthPanel.setBorderSize(0.003, 0.003+0.49544*(1-(self.escortShip.health/self.escortShip.maxHealth)), 0.003, 0.003)
             
             # Bottom text
-            self.bottomPanel.textArea.setCaption(str(self.engine.gameMgr.bottomText)
+            self.bottomPanel.textArea.setCaption(self.engine.gameMgr.gameBottomText)
+            
+            # Velocity display
+            self.speedPanel.textArea.setCaption(str(math.floor(self.playerObject.speed)) + " m/s")
 
 class CreditsOverlay(Overlay):
     name = "Credits"
